@@ -81,25 +81,27 @@ $is_display_hr_admin_menu=$object->display_hr_admin_menu();
                     </li>
                  <?php endif; ?>
 
-                    <?php if(!in_array($_SESSION['wa_current_user']->access,[25,27,28])):  ?>
 
-<!--                    <li class="kt-menu__item --><?//= setActiveMenu('hrm') ?><!-- kt-menu__item--rel">-->
-<!--                        <a href="--><?//= $base_url ?><!--?application=hrm" class="kt-menu__link"><span-->
-<!--                                    class="kt-menu__link-text"><i class="menu-icon flaticon-diagram"></i>--><?//= trans("ESS") ?><!--</span><i-->
-<!--                                    class="kt-menu__ver-arrow la la-angle-right"></i></a>-->
-<!--                    </li>-->
 
-                    <?php endif; ?>
 
-                     <?php //if($is_display_hr_admin_menu): ?>
+
+                        <li class="kt-menu__item <?= setActiveMenu('hrm') ?> kt-menu__item--rel">
+                            <a href="<?= $base_url ?>?application=hrm" class="kt-menu__link"><span
+                                        class="kt-menu__link-text"><i class="menu-icon flaticon-diagram"></i><?= trans('ESS') ?></span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                        </li>
+
+
                     <?php if($_SESSION["wa_current_user"]->can_access('HEAD_MENU_HR_ADMIN')): ?>
-<!--					<li class="kt-menu__item --><?//= setActiveMenu('hr_admin') ?><!-- kt-menu__item--rel">-->
-<!--                        <a href="--><?//= $base_url ?><!--?application=hr_admin" class="kt-menu__link"><span-->
-<!--                                    class="kt-menu__link-text"><i class="fa fa-user"></i> --><?//= trans(" Admin") ?><!--</span><i-->
-<!--                                    class="kt-menu__ver-arrow la la-angle-right"></i></a>-->
-<!--                    </li>-->
-					
+                        <li class="kt-menu__item <?= setActiveMenu('hr_admin') ?> kt-menu__item--rel">
+                            <a href="<?= $base_url ?>?application=hr_admin" class="kt-menu__link"><span
+                                        class="kt-menu__link-text"><i class="fa fa-user"></i><?= trans('Admin') ?></span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                        </li>
                     <?php endif; ?>
+
+
+
 
 
 
