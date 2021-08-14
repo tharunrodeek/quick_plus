@@ -1,0 +1,25 @@
+.activity-widget-5 {
+	width: 100%;
+	position: relative;
+	.media {
+		padding: 0;
+		margin: 0;
+	}
+	.media-left {
+		padding: 10px 20px 0 0;
+	}
+	[data-direction="rtl"] & {
+		.media-left {
+			padding: 10px 0 0 20px;
+		}
+	}
+	h5 {
+		font-size:16px;
+	}
+	p {
+		font-size: 14px;
+		&.text-muted {
+			font-size: 13px;
+		}
+	}
+}

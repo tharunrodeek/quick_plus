@@ -1,0 +1,22 @@
+.donut-chart-widget-9 {
+	padding: 20px;
+    .easy-pie-chart {
+        position: relative;
+        width: 130px;
+        height: 130px;
+        overflow: hidden;
+        .chart {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .image {
+            width: 100%;
+            height: 130px;
+            line-height: 130px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+    }
+}

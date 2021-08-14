@@ -1,0 +1,118 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin transition-mixin() {
+	transition: all .5s;
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: initial;
+	transition-delay: initial;
+}
+
+@mixin underlined-mixin($width: 40px, $height: 3, $color: primary) {
+	position: relative;
+	&:after {
+		content:"";
+		display: block;
+		position: absolute;
+		bottom:-#{$height * 3}px;
+		left:0px;
+		width:$width;
+		height:#{$height}px;
+		background-color: $color;
+	}
+}
+
+@mixin underlined-mixin-rtl($width: 40px, $height: 3, $color: primary) {
+	position: relative;
+	&:after {
+		content:"";
+		display: block;
+		position: absolute;
+		bottom:-#{$height * 3}px;
+		right:0px;
+		width:$width;
+		height:#{$height}px;
+		background-color: $color;
+	}
+}
+
+@mixin sideline-mixin($width, $color) {
+	position: relative;
+	&:after {
+		content:"";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width:$width;
+		height:100%;
+		background-color:$color;
+	}
+}
+
+@mixin sideline-mixin-rtl($width, $color) {
+	position: relative;
+	&:after {
+		content:"";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: $width;
+		height: 100%;
+		background-color: $color;
+	}
+}
+
+@mixin triangle-up-mixin($size, $color) {
+	width: 0; 
+	height: 0; 
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-bottom: $size solid $color;
+}
+
+@mixin triangle-left-mixin($size, $color) {
+	width: 0; 
+	height: 0; 
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+	border-bottom: $size solid transparent;
+	border-top: $size solid transparent; 
+	border-right: $size solid $color;
+}
+
+@mixin triangle-right-mixin($size, $color) {
+	width: 0; 
+	height: 0; 
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+	border-bottom: $size solid transparent; 
+	border-top: $size solid transparent; 
+	border-left: $size solid $color;
+}
+
+@mixin triangle-down-mixin($size, $color) {
+	width: 0; 
+	height: 0; 
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-top: $size solid $color;
+}
+

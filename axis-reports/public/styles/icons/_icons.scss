@@ -1,0 +1,128 @@
+[data-direction="ltr"] {
+	.icon-example {
+		padding:10px;
+		position: relative;
+		.icon-class {
+			position: absolute;
+			top: 15px;
+			left: 60px;
+		}
+	}
+
+	.emoji-example {
+		.icon-class {
+			top: 20px;
+			left: 70px;
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.icon-example {
+		padding:10px;
+		position: relative;
+		.icon-class {
+			position: absolute;
+			top: 15px;
+			right: 60px;
+		}
+	}
+
+	.emoji-example {
+		.icon-class {
+			top: 20px;
+			right: 70px;
+		}
+	}
+}
+
+.ion-icon {
+	display: inline-block !important;
+    font-size: 32px;
+	&.s10 {
+		font-size: 10px !important;
+	}
+	&.s12 {
+		font-size: 12px !important;
+	}
+	&.s16 {
+		font-size: 16px !important;
+	}
+	&.s24 {
+		font-size: 24px !important;
+	}
+	&.s28 {
+		font-size: 28px !important;
+	}
+	&.s32 {
+		font-size: 32px !important;
+	}
+	&.s36 {
+		font-size: 36px !important;
+	}
+	&.s40 {
+		font-size: 40px !important;
+	}
+	&.s44 {
+		font-size: 44px !important;
+	}
+	&.s48 {
+		font-size: 48px !important;
+	}
+}
+
+[data-direction="ltr"] {
+	.flag-example {
+		.flag-wrapper {
+			position: relative;
+			height:40px; 
+			width: 60px;
+			border:0;
+			overflow: hidden;
+			background: transparent;
+		}
+
+		.flag-wrapper .flag {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+		}
+		.icon-class {
+			top: 20px;
+			left: 80px;
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.flag-example {
+		.flag-wrapper {
+			position: relative;
+			height:40px; 
+			width: 60px;
+			border:0;
+			overflow: hidden;
+			background: transparent;
+		}
+
+		.flag-wrapper .flag {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+		}
+		.icon-class {
+			top: 20px;
+			right: 80px;
+		}
+	}
+}

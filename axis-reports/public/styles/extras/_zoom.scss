@@ -1,0 +1,24 @@
+[data-direction="ltr"] {
+    .zoom img {
+        width: 100%;
+        max-width: 200px;
+        display: block;
+        float: left;
+        margin: 0 20px 20px 0;
+    }
+    .zoom-overlay {
+        background: transparent !important;
+    }
+}
+[data-direction="rtl"] {
+    .zoom img {
+        width: 100%;
+        max-width: 200px;
+        display: block;
+        float: right;
+        margin: 0 0 20px 20px;
+    }
+    .zoom-overlay {
+        background: transparent !important;
+    }
+}

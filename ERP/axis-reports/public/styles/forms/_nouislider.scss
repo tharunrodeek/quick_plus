@@ -1,0 +1,38 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.noUi-connect,
+		.noUi-background,
+		.noUi-base,
+		.noUi-target,
+		.noUi-handle,
+		{
+			box-shadow: none !important;
+			border-color: map-get($value, 'background-color');
+			background-color: map-get($value, 'background-color');
+			color: map-get($value, 'text-color');
+		}
+	}
+}
+
+@each $key, $value in $colors {
+	.slider-#{$key} {
+		.noUi-connect {
+			background-color: $value !important;
+			border-color: $value !important;
+		}
+		.noUi-handle {
+			background-color: lighten($value, 5) !important;
+			border-color: lighten($value, 5) !important;
+		}
+		.noUi-background {
+			background-color: lighten($value, 20) !important;
+			border-color: lighten($value, 20) !important;
+		}
+		.noUi-base {
+			background-color: lighten($value, 20) !important;
+			border-color: lighten($value, 20) !important;
+		}
+		.noUi-target {
+		}
+	}
+}

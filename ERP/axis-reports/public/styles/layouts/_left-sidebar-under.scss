@@ -1,0 +1,138 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"][data-layout="left-sidebar-under"] {
+		html & {
+			background: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+		.main {
+			background-color: map-get($value, 'background-color') !important;
+		}
+	}
+}
+
+[data-layout="left-sidebar-under"] {
+
+	//::-webkit-scrollbar {
+	//	display:none;
+	//	width:0 !important;
+	//}
+
+	.navbar {
+		transition: transform 0.35s ease-in-out;
+		//backface-visibility: hidden;
+		//transform-style: preserve-3d;
+		left: 0;
+		right: 0;
+		padding-left: $side-margin;
+		padding-right: $side-margin;
+	}
+
+	.fullsize-background-image-1,
+	.horizontal-navigation-1,
+	.horizontal-navigation-2,
+	.horizontal-navigation-3 {
+		display: none;
+	}
+
+	.main {
+		transition: transform 0.35s ease-in-out;
+		//backface-visibility: hidden;
+		//transform-style: preserve-3d;
+		padding-left: $side-margin;
+		padding-right: $side-margin;
+		padding-top: $padding-top;
+		-ms-overflow-style: none;
+		z-index: 2;
+	}
+
+	.sidebar-placeholder {
+		display: none !important;
+		height: 0 !important;
+		z-index: -9999 !important;
+	}
+
+	&[data-direction="ltr"] {
+		.sidebar-outer-wrapper {
+			position: fixed;
+			top:0;
+			bottom:0;
+			left:0;
+			height: 100%;
+			width:$left-sidebar-width;
+			overflow: hidden;
+			z-index: 1;
+			transition: transform 0.35s ease-in-out;
+			//backface-visibility: hidden;
+			//transform-style: preserve-3d;
+
+			.sidebar-inner-wrapper {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				overflow: auto;
+				width: $left-sidebar-width + $side-margin;
+
+				.sidebar-1, 
+				.sidebar-2, 
+				.sidebar-3 {
+					width: $left-sidebar-width !important;
+					z-index: 1;
+				}
+			}
+
+		}
+
+		&.layout-collapsed {
+			.navbar {
+				transform: translate3d($left-sidebar-width, 0, 0);
+			}
+			.main {
+				transform: translate3d($left-sidebar-width, 0, 0);
+			}
+		}
+	}
+
+	&[data-direction="rtl"] {
+		.sidebar-outer-wrapper {
+			position: fixed;
+			top:0;
+			bottom:0;
+			right:0;
+			height: 100%;
+			width:$left-sidebar-width;
+			overflow: hidden;
+			z-index: 1;
+			transition: transform 0.35s ease-in-out;
+			//backface-visibility: hidden;
+			//transform-style: preserve-3d;
+
+			.sidebar-inner-wrapper {
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				overflow: auto;
+				width: $left-sidebar-width + $side-margin;
+
+				.sidebar-1, 
+				.sidebar-2, 
+				.sidebar-3 {
+					width: $left-sidebar-width !important;
+					z-index: 1;
+				}
+			}
+
+		}
+
+		&.layout-collapsed {
+			.navbar {
+				transform: translate3d(-$left-sidebar-width, 0, 0);
+			}
+			.main {
+				transform: translate3d(-$left-sidebar-width, 0, 0);
+			}
+		}
+	}
+
+}

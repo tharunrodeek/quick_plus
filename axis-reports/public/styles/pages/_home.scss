@@ -1,0 +1,40 @@
+@import '../colors';
+
+.top-banner {
+	width: 100%;
+	position: relative;
+	min-height: 450px;
+	display: block;
+	.typed-cursor {
+		display: none;
+	}
+	.typed-element-2 {
+		font-size: 22px;
+		line-height: 1;
+		padding: 0;
+		margin: 0 0 40px 0;
+		color: #fff;
+	}
+	.typed-element-3 {
+		font-size: 28px;
+		line-height: 1.5;
+		padding: 0;
+		margin: 0 0 40px 0;
+		color: #fff;
+	}
+}
+
+.screenshots {
+	.dropdown-menu {
+		@extend .bg-info-500;
+		@extend .color-white;
+		a {
+			@extend .bg-info-500;
+			@extend .color-white;
+			&:hover {
+				@extend .bg-info-700;
+				@extend .color-white;
+			}
+		}
+	}
+}

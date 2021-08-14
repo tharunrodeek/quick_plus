@@ -1,0 +1,8 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.highlighted {
+			background: map-get($value, 'highlight-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}

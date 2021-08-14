@@ -1,0 +1,32 @@
+@for $i from 0 through 5 {
+	.h-#{$i * 10} {
+		height: #{$i * 10}px !important;
+	}
+	.m-h-#{$i * 10} {
+		min-height: #{$i * 10}px !important;
+	}
+}
+.h-100 {
+    height: 100px !important;
+}
+.m-h-100 {
+    min-height: 100px !important;
+}
+.h-150 {
+    height: 150px !important;
+}
+.m-h-150 {
+    min-height: 150px !important;
+}
+.h-200 {
+    height: 200px !important;
+}
+.m-h-200 {
+    min-height: 200px !important;
+}
+.h-100p {
+    height: 100% !important;
+}
+.m-h-100p {
+    min-height: 100% !important;
+}

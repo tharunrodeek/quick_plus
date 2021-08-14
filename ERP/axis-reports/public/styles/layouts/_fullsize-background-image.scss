@@ -1,0 +1,41 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"][data-layout="fullsize-background-image"] {
+		html & {
+			background: map-get($value, 'fullsize-background-image-background-color') !important;
+			color: map-get($value, 'fullsize-background-image-text-color') !important;
+		}
+	}
+}
+
+[data-layout="fullsize-background-image"] {
+
+	//-ms-overflow-style: none;
+	//::-webkit-scrollbar {
+	//	display:none;
+	//	width:0 !important;
+	//}
+
+	.navbar,
+	.horizontal-navigation-1,
+	.horizontal-navigation-2,
+	.horizontal-navigation-3,
+	.sidebar-outer-wrapper,
+	.sidebar-inner-wrapper,
+	.footer,
+	.sidebar-placeholder {
+		display: none !important;
+		height: 0 !important;
+		z-index: -9999 !important;
+	}
+
+	.main {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.fullsize-background-image-1 {
+		display: block;
+	}
+
+}
+

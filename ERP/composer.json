@@ -1,0 +1,6 @@
+{
+    "require": {
+        "drewm/mailchimp-api": "^2.5",
+		"mpdf/mpdf": "^7.1"
+    }
+}

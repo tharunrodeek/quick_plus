@@ -1,0 +1,21 @@
+.icon-widget-2 {
+    blockquote {
+        border-left: 0;
+        border-right: 0;
+        .blockquote-text {
+            font-size: 16px;
+        }
+        .blockquote-author {
+            font-size: 14px;
+        }
+    }
+    i {
+        font-size: 48px;
+    }
+	[data-direction="rtl"] & {
+		.media-left {
+			padding-left: 10px;
+			padding-right: 0;
+		}
+	}
+}

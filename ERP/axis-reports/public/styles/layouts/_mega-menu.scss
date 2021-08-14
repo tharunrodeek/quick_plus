@@ -1,0 +1,119 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"][data-layout="mega-menu"] {
+		html & {
+			background: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}
+
+[data-layout="mega-menu"] {
+
+	//::-webkit-scrollbar {
+	//	display:none;
+	//	width:0 !important;
+	//}
+
+	.navbar {
+		transition: transform 0.35s ease-in-out;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+		left: 0;
+		right: 0;
+		padding-left: $side-margin;
+		padding-right: $side-margin;
+	}
+
+	&[data-direction="rtl"] {
+		.navbar {
+			right: 0;
+			padding-right: $side-margin;
+		}
+	}
+
+	.fullsize-background-image-1,
+	.horizontal-navigation-1,
+	.horizontal-navigation-2,
+	.horizontal-navigation-3
+	{
+		display: none;
+	}
+
+	.main {
+		transition: transform 0.35s ease-in-out;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+		padding-left: $side-margin;
+		padding-right: $side-margin;
+		padding-top: $padding-top;
+		-ms-overflow-style: none;
+	}
+
+	.sidebar-placeholder {
+		display: none !important;
+		height: 0 !important;
+		z-index: -9999 !important;
+	}
+
+	.sidebar-outer-wrapper {
+		position: fixed;
+		top:0;
+		bottom:0;
+		left:-$left-sidebar-width;
+		height: 100%;
+		width:$left-sidebar-width;
+		overflow: hidden;
+		z-index:$zindex-navbar-fixed;
+		transition: transform 0.35s ease-in-out;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+
+		.sidebar-inner-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			overflow: auto;
+			width: $left-sidebar-width + $side-margin;
+
+			.sidebar-1, 
+			.sidebar-2, 
+			.sidebar-3 {
+				width: $left-sidebar-width !important;
+			}
+		}
+	}
+
+	&[data-direction="rtl"] {
+		.sidebar-outer-wrapper {
+			right:-$left-sidebar-width;
+		}
+	}
+
+	&.layout-collapsed {
+		.sidebar-outer-wrapper {
+			transform: translate3d($left-sidebar-width, 0, 0);
+		}
+		.navbar {
+			transform: translate3d($left-sidebar-width, 0, 0);
+		}
+		.main {
+			transform: translate3d($left-sidebar-width, 0, 0);
+		}
+	}
+
+	&[data-direction="rtl"] {
+		&.layout-collapsed {
+			.sidebar-outer-wrapper {
+				transform: translate3d(-$left-sidebar-width, 0, 0);
+			}
+			.navbar {
+				transform: translate3d(-$left-sidebar-width, 0, 0);
+			}
+			.main {
+				transform: translate3d(-$left-sidebar-width, 0, 0);
+			}
+		}
+	}
+
+}

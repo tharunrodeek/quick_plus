@@ -1,0 +1,30 @@
+.text-widget-5 {
+	width: 100%;
+	display: block;
+	position: relative;
+	padding:15px 0;
+	.fa-stack {
+		margin-top:-8px;
+	}
+	.title {
+		text-transform: uppercase;
+		font-size: 11px;
+		padding:0 10px;
+		font-weight: 700;
+	}
+	.numbers {
+		padding:0 10px;
+		.amount {
+			font-size:22px;
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.text-widget-5 {
+			background: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.donut-chart-widget-7 {
+	padding: 20px;
+    .easy-pie-chart {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        .chart {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .percent {
+            width: 100%;
+            height: 150px;
+            line-height: 150px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            font-size: 42px;
+            color: #ffffff;
+            .symbol {
+                font-size: 28px !important;
+                margin-left: -5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+@each $name, $color in $bootstrap-colors {
+	.overlay-#{$name} {
+		background-color: $color;
+	}
+}
+
+.overlay-transition {
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+[data-direction="ltr"] {
+	.overlay-example {
+		margin:0 25px 25px 0;
+		float: left;
+		height: 240px;
+		width: 300px;
+		overflow: hidden;
+		border-radius:5px;
+		> code {
+			margin-bottom:10px;
+			display: inline-block;
+		}
+		> div {
+			height: 200px;
+			width: 300px;
+			overflow: hidden;
+			display: block;
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.overlay-example {
+		margin:0 0 25px 25px;
+		float: right;
+		height: 240px;
+		width: 300px;
+		overflow: hidden;
+		border-radius:5px;
+		> code {
+			margin-bottom:10px;
+			display: inline-block;
+		}
+		> div {
+			height: 200px;
+			width: 300px;
+			overflow: hidden;
+			display: block;
+		}
+	}
+}
+
+.default-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	z-index:2;
+	opacity: 1;
+	.title {
+		text-align: center;
+		margin: 20px 0 0 0;
+		font-size: 16px;
+	}
+	.icon {
+		margin-top: 20px;
+		font-size: 48px;
+	}
+}
+
+.overlay-0 {
+	position: relative;
+	> .overlay {
+		@extend .default-overlay;
+		@extend .overlay-transition;
+		transform: translate3d(0, 100%, 0);
+	}
+	&:hover {
+		> .overlay {
+			transform: translate3d(0, 0, 0);
+			opacity: 0.8;
+		}
+	}
+}
+
+.overlay-1 {
+	position: relative;
+	> .overlay {
+		@extend .default-overlay;
+		@extend .overlay-transition;
+		transform: translate3d(-100%, 0, 0);
+	}
+	&:hover {
+		> .overlay {
+			transform: translate3d(0, 0, 0);
+			opacity: 0.8;
+		}
+	}
+}
+.overlay-2 {
+	position: relative;
+	> .overlay {
+		@extend .default-overlay;
+		@extend .overlay-transition;
+		transform: translate3d(100%, 0, 0);
+	}
+	&:hover {
+		> .overlay {
+			transform: translate3d(0, 0, 0);
+			opacity: 0.8;
+		}
+	}
+}
+.overlay-3 {
+	position: relative;
+	> .overlay {
+		@extend .default-overlay;
+		@extend .overlay-transition;
+		transform: translate3d(0, -100%, 0);
+	}
+	&:hover {
+		> .overlay {
+			transform: translate3d(0, 0, 0);
+			opacity: 0.8;
+		}
+	}
+}
+.overlay-4 {
+	position: relative;
+	> .overlay {
+		@extend .default-overlay;
+		@extend .overlay-transition;
+		transform: scale(0);
+	}
+	&:hover {
+		> .overlay {
+			transform: scale(1);
+			opacity: 0.8;
+		}
+	}
+}
+.overlay-5 {
+	position: relative;
+	> .overlay {
+		@extend .default-overlay;
+		@extend .overlay-transition;
+		opacity: 0;
+	}
+	&:hover {
+		> .overlay {
+			opacity: 0.8;
+		}
+	}
+}
+

@@ -1,0 +1,75 @@
+.file-uploads {
+	.btn-file {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 20px;
+		[data-direction="ltr"] & {
+			.icon {
+				padding-right:10px;
+			}
+			input[type=file] {
+				position: absolute;
+				top: 0;
+				right: 0;
+				min-width: 100%;
+				min-height: 100%;
+				font-size: 100px;
+				text-align: right;
+				opacity: 0;
+				outline: none;
+				cursor: inherit;
+				display: block;
+			}
+		}
+		[data-direction="rtl"] & {
+			.icon {
+				padding-left:10px;
+			}
+			input[type=file] {
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-width: 100%;
+				min-height: 100%;
+				font-size: 100px;
+				text-align: left;
+				opacity: 0;
+				outline: none;
+				cursor: inherit;
+				display: block;
+			}
+		}
+	}
+
+	.input-file {
+		input[readonly] {
+			cursor: text !important;
+		}
+	}
+	.my-drop-zone {
+		padding:80px 40px;
+		font-size:28px;
+		text-align:center;
+		border-width:3px;
+		border-style: dashed;
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.file-uploads {
+			.btn-file {
+				background: map-get($value, 'odd-color') !important;
+				border-color: map-get($value, 'border-color') !important;
+				input[type=file] {
+					background: map-get($value, 'odd-color') !important;
+					border-color: map-get($value, 'border-color') !important;
+				}
+			}
+			.my-drop-zone {
+				background-color: map-get($value, 'odd-color') !important;
+				border-color: map-get($value, 'text-color') !important;
+			}
+		}
+	}
+}

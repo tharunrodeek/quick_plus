@@ -1,0 +1,10 @@
+Package: HRM And Payroll
+Version: 2.4
+Name: HRM And Payroll
+Description: HRM and Payroll For Frontaccounting Developed By Kvvaradha on behalf of Kvcodes.com
+Author: Kvvaradha <admin@kvcodes.com>
+Homepage: www.kvcodes.com
+Depends: default
+InstallPath: modules/ExtendedHRM
+Type: extension
+Filename: payroll-1.1

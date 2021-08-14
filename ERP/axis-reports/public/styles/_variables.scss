@@ -1,0 +1,159 @@
+//bootstrap z-index variables
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-navbar-sticky:     1030 !default;
+$zindex-modal-bg:          1040 !default;
+$zindex-modal:             1050 !default;
+
+//sidebar and navbar variables
+$padding-top: 80px;
+$side-margin: 30px;
+$left-sidebar-width:220px;
+$left-sidebar-collapsed-width:80px;
+$left-sidebar-expandable-width:60px;
+
+//colors
+$white: #ffffff;
+$black: #000000;
+$light: #f5f5f5;
+$dark: #262932;
+$brand-primary: #0275d8;
+$brand-default: #5bc0de;
+$brand-success: #5cb85c;
+$brand-info: #00aced;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+$twitter: #00aced;
+$facebook: #3b5998;
+$google: #dd4b39;
+
+//backgrounds
+
+/*
+//red
+//#5c0e0a
+//#911710
+//#c71f16
+
+//pink
+#5c0a33
+#911051
+
+//purple
+#320a5c
+#4f1091
+
+//blue
+#110a5c
+#1b1091
+#2516c7
+#0a2e5c
+#104891
+#0a4e5c
+#0a5c49
+#0a5c49
+#0a5c15
+#3e5c0a
+#5c590a
+#242424
+
+//light
+#faddd1
+#fad3d1
+#fad1e6
+#e5d1fa
+#d4d1fa
+#d1e3fa
+#d1f3fa
+#d1faf0
+#d1fad7
+#ebfad1
+#faf9d1
+#faefd1
+#fae6d1
+#f2e2d9
+#ffffff
+*/
+
+$bg1: darken($brand-primary, 5);
+$bg2: #002451;
+$bg3: $dark;
+$bg4: #000000;
+$bg5: #461C6E;
+$bg6: $white;
+$bg7: $light;
+
+$backgrounds: (
+	'bg-1': $bg1,
+	'bg-2': $bg2,
+	'bg-3': $bg3,
+	'bg-4': $bg4,
+	'bg-5': $bg5,
+	'bg-6': $bg6,
+	'bg-7': $bg7,
+);
+
+/**
+* generates shades for color between 100-900
+* @var $name color name
+* @var $color color hex
+* @var $amount amount to apply to lighten and darken functions
+*/
+@function shades($name, $color, $amount) {
+	@return (
+		'#{$name}': $color,
+		'#{$name}-100': lighten($color, $amount * 4),
+		'#{$name}-200': lighten($color, $amount * 3),
+		'#{$name}-300': lighten($color, $amount * 2),
+		'#{$name}-400': lighten($color, $amount * 1),
+		'#{$name}-500': $color,
+		'#{$name}-600': darken($color, $amount * 1),
+		'#{$name}-700': darken($color, $amount * 2),
+		'#{$name}-800': darken($color, $amount * 3),
+		'#{$name}-900': darken($color, $amount * 4),
+	)
+}
+
+//initial colors map
+$colors: (
+	'white': $white,
+	'black': $black,
+	'light': $light,
+	'dark': $dark,
+	'twitter': $twitter,
+	'facebook': $facebook,
+	'google': $google
+);
+
+//merge backgrounds into colors map
+$colors: map-merge($colors, shades('bg-1', map-get($backgrounds, 'bg-1'), 5));
+$colors: map-merge($colors, shades('bg-2', map-get($backgrounds, 'bg-2'), 5));
+$colors: map-merge($colors, shades('bg-3', map-get($backgrounds, 'bg-3'), 5));
+$colors: map-merge($colors, shades('bg-4', map-get($backgrounds, 'bg-4'), 5));
+$colors: map-merge($colors, shades('bg-5', map-get($backgrounds, 'bg-5'), 5));
+$colors: map-merge($colors, shades('bg-6', map-get($backgrounds, 'bg-6'), 5));
+$colors: map-merge($colors, shades('bg-7', map-get($backgrounds, 'bg-7'), 5));
+
+//merge additional colors into colors map
+$amount: 3;
+$colors: map-merge($colors, shades('light', $light, $amount));
+$colors: map-merge($colors, shades('dark', $dark, $amount));
+$colors: map-merge($colors, shades('default', $brand-default, $amount));
+$colors: map-merge($colors, shades('primary', $brand-primary, $amount));
+$colors: map-merge($colors, shades('info', $brand-info, $amount));
+$colors: map-merge($colors, shades('warning', $brand-warning, $amount));
+$colors: map-merge($colors, shades('success', $brand-success, $amount));
+$colors: map-merge($colors, shades('danger', $brand-danger, $amount));
+
+//bootstrap only colors for loops
+$bootstrap-colors: (
+	'primary': $brand-primary,
+	'default': $brand-default,
+	'success': $brand-success,
+	'info': $brand-info,
+	'warning': $brand-warning,
+	'danger': $brand-danger
+);

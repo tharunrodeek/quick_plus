@@ -1,0 +1,152 @@
+.nvd3 {
+    direction: ltr !important;
+    unicode-bidi: embed !important;
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+
+		.nvd3 {
+			text {
+				fill: map-get($value, 'text-color') !important;
+				font-family: 'Roboto', 'Helvetica', sans-serif !important;
+				font-size: 12px;
+				font-weight: normal;
+			}
+		}
+
+		.nvd3-pie,
+		.nvd3-donut
+		{
+			.nvd3.nv-pie path {
+				stroke: map-get($value, 'border-color') !important;
+			}
+			.nvd3.nv-pie path {
+				fill-opacity: 1;
+			}
+		}
+		.nvd3 .nv-axis path {
+			stroke: map-get($value, 'border-color') !important;
+		}
+
+		.nvd3 .nv-axis line {
+			stroke: map-get($value, 'border-color') !important;
+		}
+
+		.nvd3 .nv-bars .hover rect {
+			fill: map-get($value, 'background-color') !important;
+		}
+
+		.nvd3 .nv-bars text {
+			fill: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3 .nv-bars .hover text {
+			fill: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3 .nv-discretebar .nv-groups text,
+		.nvd3 .nv-multibarHorizontal .nv-groups text {
+			fill: map-get($value, 'text-color') !important;
+			//stroke: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3 line.nv-boxplot-median {
+			stroke: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3 .nv-point-paths path {
+			stroke: map-get($value, 'border-color') !important;
+			fill: map-get($value, 'border-color') !important;
+		}
+
+		.nvd3 text {
+			font: normal 12px 'Roboto', 'Helvetica', sans-serif;
+		}
+
+		.nvd3 .title {
+			font: normal 14px 'Roboto', 'Helvetica', sans-serif;
+		}
+
+		.nvd3 .nv-background {
+			fill: map-get($value, 'background-color') !important;
+		}
+
+		.nv-brush .resize path {
+			fill: map-get($value, 'border-color') !important;
+			stroke: map-get($value, 'border-color') !important;
+		}
+
+		.nvd3 .nv-brushBackground rect {
+			stroke: map-get($value, 'background-color') !important;
+			fill: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3 .background path {
+			stroke: map-get($value, 'background-color') !important;
+		}
+
+		.nvd3 .nv-parallelCoordinates-brush .extent 
+		{
+			fill: map-get($value, 'text-color') !important;
+			stroke: map-get($value, 'background-color') !important;
+		}
+
+		.nvd3 .missingValuesline line {
+			stroke: map-get($value, 'background-color') !important;
+		}
+
+		.nvd3.nv-pie .nv-pie-title {
+			fill: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3.nv-pie .nv-slice text {
+			stroke: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3.nv-pie path {
+			stroke: map-get($value, 'background-color') !important;
+		}
+
+		.nvd3.nv-sparklineplus .nv-hoverValue line {
+			stroke: map-get($value, 'border-color') !important;
+		}
+
+		.nvd3.nv-sparklineplus .nv-yValue {
+			stroke: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3.nv-sparklineplus .nv-maxValue {
+			stroke: map-get($value, 'text-color') !important;
+			fill: map-get($value, 'text-color') !important;
+		}
+
+		.nvd3.nv-sparklineplus .nv-minValue {
+			stroke: map-get($value, 'text-color') !important;
+			fill: map-get($value, 'text-color') !important;
+		}
+
+		.nvtooltip {
+			background-color: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+			border: 1px solid map-get($value, 'border-color') !important;
+			font-family: 'Roboto', 'Helvetica', sans-serif;
+		}
+
+		.nvtooltip h3 {
+			background-color: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+			border: 1px solid map-get($value, 'border-color') !important;
+		}
+
+		.nvtooltip table td.legend-color-guide div {
+			border: 1px solid map-get($value, 'border-color') !important;
+		}
+
+		.nvd3 line.nv-guideline {
+			stroke: map-get($value, 'border-color') !important;
+		}
+
+	}
+}
+

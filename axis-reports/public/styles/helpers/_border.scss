@@ -1,0 +1,35 @@
+/* border helpers */
+@for $i from 0 through 5 {
+	.b-w-#{$i} {
+		border-width:#{$i}px !important;
+	}
+}
+
+/* border radius helpers */
+@for $i from 0 through 2 {
+	.b-r-#{$i*25}p {
+		border-radius: #{$i * 25}% !important;
+	}
+}
+
+.n-b,
+.no-border
+{
+	border:0 !important;
+}
+.n-b-l {
+	border-left:0 !important;
+}
+.n-b-t {
+	border-top:0 !important;
+}
+.n-b-r {
+	border-right:0 !important;
+}
+.n-b-b {
+	border-bottom:0 !important;
+}
+
+.n-r {
+    border-radius:0 !important;
+}

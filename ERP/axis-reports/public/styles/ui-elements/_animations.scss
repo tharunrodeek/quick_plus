@@ -1,0 +1,55 @@
+.animation-icon {
+	.ion-icon {
+		font-size: 128px;
+		margin: 20px;
+	}
+}
+
+.animation-delays {
+	code {
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+}
+
+.animation-delay-example {
+	display: block; 
+	height: 80px;
+	width: 80px;
+	background: $brand-info;
+	float: left;
+	margin: 0px 20px 20px 0;
+	[data-direction="rtl"] & {
+		float: right;
+		margin: 0px 0 20px 20px;
+	}
+}
+
+@for $i from 1 through 51 {
+	.delay-#{($i - 1) * 100}, { 
+		animation-delay: #{($i - 1) * 50}ms; 
+	}
+}
+.animation-delay-fast {
+	@for $i from 1 through 50 {
+		> *:nth-child(#{$i}) { 
+			animation-delay: #{$i * 50}ms; 
+		}
+	}
+}
+.animation-delay,
+.animation-delay-normal
+{
+	@for $i from 1 through 50 {
+		> *:nth-child(#{$i}) { 
+			animation-delay: #{$i * 100}ms; 
+		}
+	}
+}
+.animation-delay-slow {
+	@for $i from 1 through 50 {
+		> *:nth-child(#{$i}) { 
+			animation-delay: #{$i * 200}ms; 
+		}
+	}
+}

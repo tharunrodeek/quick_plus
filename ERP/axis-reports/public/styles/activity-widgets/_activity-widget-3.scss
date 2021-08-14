@@ -1,0 +1,50 @@
+.activity-widget-3 {
+	.media-left {
+		padding: 10px 20px 0 0;
+	}
+	[data-direction="rtl"] & {
+		.media-left {
+			padding: 10px 0 0 20px;
+		}
+	}
+	.row {
+		padding: 0;
+		margin: 0;
+	}
+	.media {
+		width: 100%;
+		padding: 10px;
+		.media-body {
+			padding-top: 7px;
+		}
+	}
+	h5 {
+		font-size:14px;
+		font-weight: normal;
+	}
+	p {
+		font-size: 14px;
+		margin-bottom: 5px;
+		&.text-muted {
+			font-size: 13px;
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.activity-widget-3 {
+			.row {
+				&:nth-child(odd) {
+					background-color: map-get($value, 'odd-color');
+				}
+				&:nth-child(even) {
+					background-color: map-get($value, 'even-color');
+				}
+			}
+			h5 {
+				color: map-get($value, 'text-color');
+			}
+		}
+	}
+}

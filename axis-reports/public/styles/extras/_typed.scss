@@ -1,0 +1,134 @@
+[data-direction="ltr"] {
+    .text-body {
+        height: 150px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.85);
+        color: #f0f0f0;
+        text-shadow: #000 0px 1px 0px;
+        font-family: "Consolas", "Courier New", "Courier";
+        font-size: 16px;
+        line-height: 1.5em;
+        font-weight: 500;
+        text-align: left;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        clear: both;
+        .typed-element {
+            float: left;
+            margin-right: 10px;
+        }
+    }
+    .text-body-normal {
+        height: 150px;
+        padding: 10px;
+        background-color: transparent;
+        color: #fff;
+        text-align: left;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        clear: both;
+        .typed-element {
+            float: left;
+            margin-right: 10px;
+        }
+    }
+}
+[data-direction="rtl"] {
+    .text-body {
+        height: 150px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.85);
+        color: #f0f0f0;
+        text-shadow: #000 0px 1px 0px;
+        font-family: "Consolas", "Courier New", "Courier";
+        font-size: 16px;
+        line-height: 1.5em;
+        font-weight: 500;
+        text-align: right;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        clear: both;
+        .typed-element {
+            float: right;
+            margin-left: 10px;
+        }
+    }
+    .text-body-normal {
+        height: 150px;
+        padding: 10px;
+        background-color: transparent;
+        color: #fff;
+        text-align: right;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+        clear: both;
+        .typed-element {
+            float: right;
+            margin-left: 10px;
+        }
+    }
+}
+@each $key, $value in $palettes {
+    [data-palette="#{$key}"] {
+        .typed-light {
+            background-color: #f0f0f0 !important;
+            color: #000 !important;
+            text-shadow: #f0f0f0 0px 1px 0px !important;
+        }
+        .typed-default {
+            background: map-get($value, 'hover-color') !important;
+            color: map-get($value, 'text-color') !important;
+        }
+        .typed-highlighted {
+            background: map-get($value, 'hover-color') !important;
+            color: map-get($value, 'highlight-color') !important;
+        }
+        .typed-white {
+            background: transparent !important;
+            color: #fff !important;
+        }
+        .typed-black {
+            background: transparent !important;
+            color: #000 !important;
+        }
+    }
+}
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

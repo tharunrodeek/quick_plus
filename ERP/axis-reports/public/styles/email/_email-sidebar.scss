@@ -1,0 +1,28 @@
+[data-direction="ltr"] {
+    .email-sidebar {
+        form, .btn-block, h4, ul {
+            margin-bottom: 20px;
+        }
+        li {
+            a {
+                .sidebar-icon {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+[data-direction="rtl"] {
+    .email-sidebar {
+        form, .btn-block, h4, ul {
+            margin-bottom: 20px;
+        }
+        li {
+            a {
+                .sidebar-icon {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

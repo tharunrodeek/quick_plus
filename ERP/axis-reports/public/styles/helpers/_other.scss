@@ -1,0 +1,64 @@
+@for $i from 0 through 10 {
+	.z-i--#{$i} {
+		z-index: -#{$i} !important;
+	}
+	.z-i-#{$i} {
+		z-index: #{$i} !important;
+	}
+}
+
+.o-0 {
+	opacity:0 !important;
+}
+.o-1 {
+	opacity:1 !important;
+}
+
+.no-before {
+	&:before {
+		display: none !important;
+	}	
+}
+.no-after {
+	&:after {
+		display: none !important;
+	}	
+}
+
+.inline {
+    display:inline !important;
+}
+.block {
+    display:block !important;
+}
+.inline-block {
+    display:inline-block !important;
+}
+
+.no-display, 
+.hidden {
+    display:none !important;
+}
+
+.v-a-t {
+    vertical-align:top !important;
+}
+.v-a-m {
+    vertical-align:middle !important;
+}
+.v-a-b {
+    vertical-align:bottom !important;
+}
+
+.no-float {
+    float:none !important;
+}
+
+.centered {
+	margin:0 auto !important;
+	text-align: center !important;
+}
+
+.no-wrap {
+    white-space:nowrap !important;
+}

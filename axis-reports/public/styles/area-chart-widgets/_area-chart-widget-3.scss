@@ -1,0 +1,62 @@
+$size: 200px;
+
+.area-chart-widget-3 {
+	width: 100%;
+	position: relative;
+	height: $size;
+	.row,
+	.col-xs-12 {
+		margin: 0;
+		padding: 0;
+	}
+	.ct-chart {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		min-height: $size !important;
+		height: $size !important;
+	}
+	.chart-placeholder {
+		min-height: $size !important;
+		height: $size !important;
+	}
+	.ct-label {
+		display: none;
+	}
+	.title {
+		z-index: 2;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		font-size: 14px;
+	}
+	.amount {
+		z-index: 2;
+		position: absolute;
+		top: 35px;
+		left: 20px;
+		font-size: 42px;
+		font-weight: 700;
+	}
+	.percent {
+		z-index: 2;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 24px;
+		font-weight: 700;
+	}
+	.subtitle {
+		z-index: 2;
+		position: absolute;
+		top: 50px;
+		right: 20px;
+		font-size: 12px;
+	}
+
+}

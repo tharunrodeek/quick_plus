@@ -1,0 +1,61 @@
+.text-bold {
+    font-weight:bold !important;
+}
+.text-left {
+	text-align: left !important;
+}
+.text-center {
+	text-align: center !important;
+}
+.text-right {
+	text-align: right !important;
+}
+.text-justify {
+	text-align: justify !important;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+@for $i from 3 through 9 {
+	.f-w-#{$i * 100} {
+		font-weight:#{$i * 100} !important;
+	}
+}
+
+/* font size in px */
+@for $i from 10 through 24 {
+	.f-s-#{$i} {
+		font-size:#{$i}px !important;
+	}
+}
+
+.text-xs {
+	font-size: 12px !important;
+}
+
+.text-sm {
+	font-size: 13px !important;
+}
+
+/* additional sizes */
+$sizes: (28,32,36,48,64);
+@each $size in $sizes {
+	.f-s-#{$size} {
+		font-size:#{$size}px !important;
+	}
+}
+
+/* font size in rem */
+@for $i from 5 through 20 {
+	.f-r-#{$i} {
+		font-size:#{$i / 10}rem;
+	}
+}
+

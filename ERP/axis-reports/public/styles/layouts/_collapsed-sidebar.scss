@@ -1,0 +1,132 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"][data-layout="collapsed-sidebar"] {
+		html & {
+			background: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}
+
+[data-layout="collapsed-sidebar"] {
+
+	&[data-direction="ltr"] {
+	
+		//::-webkit-scrollbar {
+		//	display:none;
+		//	width:0 !important;
+		//}
+
+		.navbar {
+			left: $left-sidebar-collapsed-width !important;
+			right: 0 !important;
+			padding-left: $side-margin !important;
+			padding-right: $side-margin !important;
+		}
+
+		.fullsize-background-image-1,
+		.horizontal-navigation-1,
+		.horizontal-navigation-2,
+		.horizontal-navigation-3
+		{
+			display: none;
+		}
+
+		.main {
+			padding-top: $padding-top;
+			padding-left: $left-sidebar-collapsed-width + $side-margin;
+			padding-right: $side-margin;
+			-ms-overflow-style: none;
+		}
+
+		.sidebar-placeholder {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			min-height: 100%;
+			right: $left-sidebar-collapsed-width;
+			z-index:$zindex-navbar-fixed - 2;
+			width: $left-sidebar-collapsed-width;
+			display: block;
+		}
+
+		.sidebar-outer-wrapper {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			min-height: 100%;
+			right: $left-sidebar-collapsed-width;
+			z-index:$zindex-navbar-fixed - 1;
+			width: $left-sidebar-collapsed-width;
+			.sidebar-inner-wrapper {
+				width: $left-sidebar-collapsed-width;
+			}
+		}
+
+	}
+}
+
+[data-layout="collapsed-sidebar"] {
+
+	&[data-direction="rtl"] {
+	
+		//::-webkit-scrollbar {
+		//	display:none;
+		//	width:0 !important;
+		//}
+
+		.navbar {
+			right: $left-sidebar-collapsed-width !important;
+			left: 0 !important;
+			padding-left: $side-margin !important;
+			padding-right: $side-margin !important;
+		}
+
+		.fullsize-background-image-1,
+		.horizontal-navigation-1,
+		.horizontal-navigation-2,
+		.horizontal-navigation-3
+		{
+			display: none;
+		}
+
+		.main {
+			padding-top: $padding-top;
+			padding-right: $left-sidebar-collapsed-width + $side-margin;
+			padding-left: $side-margin;
+			-ms-overflow-style: none;
+		}
+
+		.sidebar-placeholder {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			height: 100%;
+			min-height: 100%;
+			//left: $left-sidebar-collapsed-width;
+			z-index:$zindex-navbar-fixed - 2;
+			width: $left-sidebar-collapsed-width;
+			display: block;
+		}
+
+		.sidebar-outer-wrapper {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			height: 100%;
+			min-height: 100%;
+			left: $left-sidebar-collapsed-width;
+			z-index:$zindex-navbar-fixed - 1;
+			width: $left-sidebar-collapsed-width;
+			.sidebar-inner-wrapper {
+				width: $left-sidebar-collapsed-width;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,136 @@
+.pricing-table-1 {
+	padding: 100px !important;
+	.text-center {
+		padding: 0 !important;
+	}
+	.inner {
+		padding: 20px 40px !important;
+	}
+	.header {
+		padding: 20px;
+	}
+	.table, td, tr, th {
+		border: none !important;
+		border-top: none !important;
+		border-bottom: none !important;
+		background-color:transparent !important;
+	}
+	h3 {
+		font-size: 22px;
+	}
+	h1 {
+		font-size: 48px;
+	}
+	.t1, .t2, .t3 {
+		transition: all .5s;
+		transition-property: all;
+		transition-duration: 0.5s;
+		transition-timing-function: initial;
+		transition-delay: initial;
+	}
+	.t1, .t3 {
+		z-index: 1;
+	}
+	.t2 {
+		transform: scale(1.1);
+		z-index: 2;
+	}
+	.text-xs {
+		font-size: 20px;
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.pricing-table-1 {
+			.header {
+				background-color: map-get($value, 'hover-color');
+			}
+			.t1, .t3 {
+				background-color: map-get($value, 'even-color');
+			}
+			.t2 {
+				background-color: map-get($value, 'odd-color');
+			}
+		}
+	}
+}
+
+.pricing-table-2 {
+	padding: 100px !important;
+	span, sup, h3 {
+		color: #fff !important;
+	}
+	.text-center {
+		padding: 0 !important;
+	}
+	.inner {
+		padding: 20px 40px !important;
+	}
+	.header {
+		padding: 20px;
+	}
+	.table, td, tr, th {
+		border: none !important;
+		border-top: none !important;
+		border-bottom: none !important;
+		background-color:transparent !important;
+	}
+	h3 {
+		font-size: 22px;
+	}
+	h1 {
+		font-size: 48px;
+	}
+	.t1, .t2, .t3 {
+		transition: all .5s;
+		transition-property: all;
+		transition-duration: 0.5s;
+		transition-timing-function: initial;
+		transition-delay: initial;
+		&:hover {
+		}
+	}
+	.t1 {
+		background-color: $brand-success;
+		z-index: 1;
+		.header {
+			background-color: darken($brand-success, 5);
+		}
+	}
+	.t3 {
+		background-color: $brand-warning;
+		z-index: 1;
+		.header {
+			background-color: darken($brand-warning, 5);
+		}
+	}
+	.t2 {
+		transform: scale(1.1);
+		background-color: $brand-danger;
+		z-index: 2;
+		.header {
+			background-color: darken($brand-danger, 5);
+		}
+	}
+	.text-xs {
+		font-size: 20px;
+	}
+	.btn {
+		&.btn-white {
+			&.btn-outline {
+				background-color: transparent !important;
+				border-color: #fff !important;
+				color: #fff !important;
+				border-width: 1px !important;
+				&:hover, &:active, &:focus {
+					background-color: transparent !important;
+					border-color: #fff !important;
+					color: #fff !important;
+					border-width: 1px !important;
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,9 @@
+@import 'palettes';
+
+@each $name, $palette in $palettes {
+	#{$name} {
+		@each $key, $value in $palette {
+			#{$key}: #{$value};
+		}
+	}
+}

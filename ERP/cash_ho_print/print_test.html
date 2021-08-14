@@ -1,0 +1,163 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title>Invoice Print</title> </head> <body> <div class="invoice-box arabic"> <table cellpadding="0" cellspacing="0"> <tr class="top"> <td colspan="4"> <table> <tr> <td class="title" style="text-align: center"> <img src="images/header-top.jpg" style="width:100%;"> </td> </tr> </table> </td> </tr> </table> <div class="invoice-title" style="margin: 5px; width: 100%; border: 1px solid black"> <span style="float: left; text-align: left !important;"> <img height="40" width="80" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAAAeAQMAAABXBBPSAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAAC1JREFUKJFj+Mx/+DDDGXt++8M85w8f/nOG34bf/sCZD/bGBxhGpUalRqVgUgCv0ohon8/YHAAAAABJRU5ErkJggg=="> </span> <span style="float: right; text-align: right !important;"> <img src="images/tax-invoice-title.jpg" style="width:100%; max-width: 250px"> </span> <span style="min-width: 33.33%;"></span> </div> <table class="info-table"> <caption style="text-align: center; border: 1px solid black">Customer Information <span class="arabic">??????? ?????????? </span> </caption> <tr> <td>Date:</td> <td class="center">2018-06-07</td> <td class="right arabic">: ??????? ??????</td> </tr> <tr> <td>Invoice Number:</td> <td class="center">017/2018</td> <td class="right arabic">: ??? ????????</td> </tr> <tr> <td>Customer:</td> <td class="center">abc</td> <td class="right arabic">: ????????</td> </tr> <tr> <td>Customer TRN Number:</td> <td class="center"></td> <td class="right arabic">: ??? ????? ???????</td> </tr> <tr> <td>Mobile umber</td> <td class="center"></td> <td class="right arabic">: ??? ?????? ???????</td> </tr> <tr> <td>Customer Ref:</td> <td class="center"></td> <td class="right arabic">: ????</td> </tr> </table> <div style="height: 330px"> <table class="invoice-items"> <caption style="margin: 5px">Particulars <span class="arabic">??????</span></caption> <tr class="heading"> <td> Sl. No<br><span class="arabic">?????</span> </td> <td> Service<br><span class="arabic">???????</span> </td> <td> Quantity<br><span class="arabic">??????</span> </td> <td> Govt.Fee & Bank Charge<br><span class="arabic">?????? ????????</span> </td> <td> Price<br><span class="arabic">????? ????????</span> </td> <td> Tax Amount<br><span class="arabic">???? ???????</span> </td> <td> Total<br><span class="arabic">???????? ???????</span> </td> </tr> <tr class='item'> <td class='center'>1</td> <td class='center arabic'>2 Year Medical Urgent - ??? ????? ?????/ 24 ????-??? ????? ?????/ 24 ????</td> <td class='center'>1</td> <td class='right'>203.15</td> <td class='right'>85.00</td> <td class='right'>4.25</td> <td class='right'>292.40</td> </tr> <tr class="total"> <td></td> <td></td> <td></td> <td></td> <td></td> <td><b>Total VAT ?????? ?????? ??????? </b></td> <td class="right"> 4.25 </td> </tr> <tr class="total"> <td></td> <td></td> <td></td> <td></td> <td></td> <td><b>Net Amount ???????? </b></td> <td class="right"> 292.40 </td> </tr> </table> </div> <table class="footer1"> <tr> <td style="text-align: center">Administrator</td> <td class="right">Note:<span class="arabic">???????</span></td> </tr> <tr> <td style="text-align: center">Authorized Signatory</td> <td class="right arabic">?????? ?????? ?? ???????? ?????????? ??? ?????? ????????</td> </tr> <tr> <td></td> <td class="right">Kindly check the invoice and documents before leaving the counter</td> </tr> </table> <div><img src="images/footer-banner.jpg"></div> </div> </body> </html>
+
+
+<style>
+
+
+
+
+.arabic {
+
+    font-family: dejavusanscondensed;
+    /*direction: rtl;*/
+
+}
+
+body {
+    font-family: dejavusanscondensed !important;
+}
+
+
+.invoice-box {
+    max-width: 800px;
+    /*margin: auto;*/
+    /*padding: 30px;*/
+    border: 1px solid #eee;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, .15);*/
+    font-size: 16px;
+    line-height: 24px;
+    font-family: dejavusanscondensed !important;
+    color: #555;
+}
+
+.invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+    font-size: 11px;
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(7) {
+    /*text-align: right;*/
+}
+
+
+
+.invoice-box table tr.top table td {
+    /*padding-bottom: 20px;*/
+}
+
+.invoice-box table tr.top table td.title {
+    font-size: 11px;
+    line-height: 45px;
+    color: #333;
+}
+
+.invoice-box table tr.information table td {
+    padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    /*font-weight: bold;*/
+}
+
+.invoice-box table tr.details td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td{
+    border-bottom: 1px solid #eee;
+}
+
+
+.invoice-box table tr.item.last td {
+    border-bottom: none;
+}
+
+.invoice-box table tr.heading td {
+    text-align: center;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+    /*border-top: 2px solid #eee;*/
+    /*font-weight: bold;*/
+}
+
+.signature-section {
+    padding-left:  25px; float: left;
+}
+
+.note-section {
+    padding-right:  25px;float: right;
+}
+
+.info-table caption {
+    border: 1px solid black;
+}
+
+.invoice-title {
+    /*text-align:  center;*/
+
+}
+
+.invoice-title h2 {
+    border: 1px solid black; border-radius: 5px
+}
+
+.footer1 tr td:nth-child(2) {
+    text-align: right !important;
+}
+
+.right {
+    text-align: right !important;
+}
+
+.center {
+    text-align: center !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+.info-table tr td {
+    border: 1px solid black;
+}
+.info-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/** RTL **/
+.rtl {
+    direction: rtl;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+.rtl table {
+    text-align: right;
+}
+
+.rtl table tr td:nth-child(2) {
+    text-align: left;
+}
+
+</style>
+
+

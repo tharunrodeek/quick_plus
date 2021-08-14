@@ -1,0 +1,40 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"][data-layout="empty-view"] {
+		html & {
+			background: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}
+
+[data-layout="empty-view"] {
+
+	//-ms-overflow-style: none;
+	//::-webkit-scrollbar {
+	//	display:none;
+	//	width:0 !important;
+	//}
+
+	.fullsize-background-image-1,
+	.navbar,
+	.horizontal-navigation-1,
+	.horizontal-navigation-2,
+	.horizontal-navigation-3,
+	.sidebar-outer-wrapper,
+	.sidebar-inner-wrapper,
+	.footer {
+		display: none;
+	}
+
+	.sidebar-placeholder {
+		display: none !important;
+		height: 0 !important;
+		z-index: -9999 !important;
+	}
+
+	.main {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+}
+

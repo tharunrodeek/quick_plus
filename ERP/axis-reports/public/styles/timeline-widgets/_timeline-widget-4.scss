@@ -1,0 +1,96 @@
+[data-direction="ltr"] {
+	.timeline-widget-4 {
+		.row {
+			margin: 0;
+			padding: 0;
+		}
+		p {
+			margin-bottom: 5px;
+		}
+		.timeline {
+			position: relative;
+			padding-left: 40px;
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 2px;
+				height: 100%;
+				top: 0;
+				bottom: 0px;
+				left: 20px;
+				z-index: 1;
+				background: #fff;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 50%;
+				left: 20px;
+				width: 12px;
+				height: 12px;
+				background-color: #fff;
+				border-radius: 50% !important;
+				z-index: 2;
+				margin-top: -6px;
+				margin-left: -5px;
+			}
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.timeline-widget-4 {
+		.row {
+			margin: 0;
+			padding: 0;
+		}
+		p {
+			margin-bottom: 5px;
+		}
+		.timeline {
+			position: relative;
+			padding-right: 40px;
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 2px;
+				height: 100%;
+				top: 0;
+				bottom: 0px;
+				right: 20px;
+				z-index: 1;
+				background: #fff;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 50%;
+				right: 20px;
+				width: 12px;
+				height: 12px;
+				background-color: #fff;
+				border-radius: 50% !important;
+				z-index: 2;
+				margin-top: -6px;
+				margin-right: -5px;
+			}
+		}
+	}
+}
+
+@each $name, $color in $bootstrap-colors {
+	.timeline-widget-4 {
+		.timeline-#{$name} {
+			&:before {
+				background: $color !important;
+			}
+			&:after {
+				background-color: $color !important;
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+.notifyjs-bootstrap-success {
+    color: #fff !important;
+    background-color: $brand-success !important;
+    border-color: darken($brand-success, 5) !important;
+    background-image: none !important;
+}
+.notifyjs-bootstrap-info {
+    color: #fff !important;
+    background-color: $brand-info !important;
+    border-color: darken($brand-info, 5) !important;
+    background-image: none !important;
+}
+.notifyjs-bootstrap-warn {
+    color: #fff !important;
+    background-color: $brand-warning !important;
+    border-color: darken($brand-warning, 5) !important;
+    background-image: none !important;
+}
+.notifyjs-bootstrap-error {
+    color: #fff !important;
+    background-color: $brand-danger !important;
+    border-color: darken($brand-danger, 5) !important;
+    background-image: none !important;
+}
+
+.notifyjs-bootstrap-base {
+	font-size: 14px !important;
+    font-weight: normal !important;
+    padding: 8px !important;
+    text-shadow: none !important;
+}
+
+@each $key, $value in $bootstrap-colors {
+	.alert {
+		&.alert-#{$key} {
+			background-color: $value;
+			border-color: darken($value, 5);
+			color: #fff;
+		}
+		&.alert-#{$key}-outline {
+			background-color: transparent !important;
+			border-color: darken($value, 5) !important;
+			color: $value !important;
+			.close {
+				color: $value !important;
+				text-shadow: none !important;
+				opacity: 0.7 !important;
+			}
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.alert {
+		.close {
+			float: left !important;
+		}
+	}
+}
+
+.sweet-overlay {
+	z-index: $zindex-modal !important;
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.sweet-alert {
+			background-color: map-get($value, 'even-color') !important;
+			color: map-get($value, 'text-color') !important;
+			border-color: map-get($value, 'border-color') !important;
+			h2, p {
+				background-color: map-get($value, 'even-color') !important;
+				color: map-get($value, 'text-color') !important;
+				border-color: map-get($value, 'border-color') !important;
+			}
+			.icon {
+				.fix,
+				&:before, 
+				&:after {
+					background-color: map-get($value, 'even-color') !important;
+					border-color: map-get($value, 'border-color') !important;
+				}
+			}
+		}
+	}
+}
+
+

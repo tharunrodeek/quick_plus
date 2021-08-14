@@ -1,0 +1,18 @@
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.morris-hover.morris-default-style {
+			color: map-get($value, 'text-color') !important;
+			background: map-get($value, 'odd-color') !important;
+			border: solid 2px map-get($value, 'border-color') !important;
+		}
+		#morris-donut-example {
+			svg text {
+				fill: map-get($value, 'text-color') !important;
+				font-family: 'Roboto', 'Helvetica', sans-serif !important;
+				font-size: 8px !important;
+				font-weight: 300;
+			}
+		}
+	}
+}

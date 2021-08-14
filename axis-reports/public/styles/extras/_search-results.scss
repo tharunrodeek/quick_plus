@@ -1,0 +1,62 @@
+.search-results {
+	.btn-search {
+		padding-bottom: 10px;
+	}
+	.result {
+		padding:20px 10px 10px 10px;
+		h3 {
+			font-size: 1.1rem;
+		}
+		h3 {
+			font-size: 18px;
+		}
+		.link {
+			font-size: 13px;
+			color: $brand-success !important;
+		}
+		.description {
+			font-size: 14px;
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.search-results {
+			.result {
+				&:nth-child(odd) {
+					background-color: map-get($value, 'odd-color');
+				}
+				&:nth-child(even) {
+					background-color: map-get($value, 'even-color');
+				}
+				&:hover {
+					background-color: map-get($value, 'hover-color');
+				}
+			}
+
+			.page-item {
+				&:nth-child(odd) {
+					.page-link {
+						background-color: map-get($value, 'odd-color');
+						color: map-get($value, 'text-color');
+						border-color: map-get($value, 'border-color');
+						&:hover {
+							background-color: map-get($value, 'hover-color');
+						}
+					}
+				}
+				&:nth-child(even) {
+					.page-link {
+						background-color: map-get($value, 'even-color');
+						color: map-get($value, 'text-color');
+						border-color: map-get($value, 'border-color');
+						&:hover {
+							background-color: map-get($value, 'hover-color');
+						}
+					}
+				}
+			}
+		}
+	}
+}

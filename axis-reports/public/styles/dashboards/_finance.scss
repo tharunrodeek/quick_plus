@@ -1,0 +1,14 @@
+#finance-chart svg {
+	
+	.nvd3 .nv-axis path.domain {
+		stroke-opacity: .3 !important;
+	}
+	.nv-x, .nv-y {
+		line {
+			opacity: 0.3 !important;
+		}
+	}
+	.nvd3 g.nv-groups path.nv-line {
+		stroke-width: 4px;
+	}
+}

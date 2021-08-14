@@ -1,0 +1,92 @@
+@each $animation in $animations {
+	.carousel {
+		.carousel-item {
+			&.active {
+				.carousel-#{$animation} {
+					@extend .animated;
+					@extend .#{$animation};
+				}
+			}
+		}
+	}
+	.carousel {
+		&.slide {
+			.carousel-item {
+				&:not(.active), &.left {
+					.carousel-caption, .carousel-content {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.bs-carousel-1 {
+	height: 300px !important;
+	width: 900px !important;
+	overflow: hidden;
+	.carousel-caption {
+		h3, p {
+			font-weight: 700;
+			background: rgba(0,0,0,0.5);
+			padding: 3px 6px;
+			color: #fff;
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+			display: inline-block !important;
+			width: auto;
+		}
+	}
+}
+
+.bs-carousel-2 {
+	height: 300px !important;
+	width: 900px !important;
+	overflow: hidden;
+	.carousel-content {
+		padding: 20px 0;
+		text-align: center;
+		img {
+			margin-bottom:20px;
+		}
+		h3 {
+			font-size: 22px;
+		}
+		p {
+			font-size:16px;
+		}
+		h3, p {
+			font-weight: 700;
+			background: rgba(0,0,0,0.3);
+			padding: 2px 2px;
+			color: #fff;
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+			display: inline-block !important;
+		}
+	}
+}
+
+#owl-demos .owl-carousel .item {
+    height: 200px;
+	width: 200px;
+    background: $brand-success;
+    padding: 1rem;
+}
+
+#owl-demos-2 .owl-carousel .item {
+    height: 200px;
+    background: $brand-danger;
+    padding: 1rem;
+}
+
+#owl-demos-3 .owl-carousel .item {
+    height: 200px;
+    background: $brand-warning;
+    padding: 1rem;
+}
+
+[data-direction="rtl"] {
+	.owl-carousel .owl-item {
+		float: right;
+	}
+}

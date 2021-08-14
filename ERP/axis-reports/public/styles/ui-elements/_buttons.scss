@@ -1,0 +1,159 @@
+//override colors from _palettes.scss since we don't need all of them
+$colors: (
+	'default': $brand-default,
+	'primary': $brand-primary,
+	'info': $brand-info,
+	'warning': $brand-warning,
+	'success': $brand-success,
+	'danger': $brand-danger,
+	'white': $white,
+	'black': $black,
+	'facebook': $facebook,
+	'twitter': $twitter,
+	'google': $google,
+);
+
+@function shades($name, $color, $amount) {
+	@return (
+		'#{$name}': $color,
+		'#{$name}-100': lighten($color, $amount * 4),
+		'#{$name}-200': lighten($color, $amount * 3),
+		'#{$name}-300': lighten($color, $amount * 2),
+		'#{$name}-400': lighten($color, $amount * 1),
+		'#{$name}-500': $color,
+		'#{$name}-600': darken($color, $amount * 1),
+		'#{$name}-700': darken($color, $amount * 2),
+		'#{$name}-800': darken($color, $amount * 3),
+		'#{$name}-900': darken($color, $amount * 4),
+	)
+}
+
+$amount: 3;
+$colors: map-merge($colors, shades('default', $brand-default, $amount));
+$colors: map-merge($colors, shades('primary', $brand-primary, $amount));
+$colors: map-merge($colors, shades('info', $brand-info, $amount));
+$colors: map-merge($colors, shades('warning', $brand-warning, $amount));
+$colors: map-merge($colors, shades('success', $brand-success, $amount));
+$colors: map-merge($colors, shades('danger', $brand-danger, $amount));
+
+.btn {
+	@extend .color-white;
+	@extend .color-white-hover;
+	@each $name, $color in $colors {
+		&.btn-#{$name} {
+			@extend .bg-#{$name};
+			@extend .bg-#{$name}-hover;
+			@extend .border-color-#{$name};
+			@extend .border-color-#{$name}-hover;
+			@extend .color-white;
+			@extend .color-white-hover;
+			@include transition-mixin;
+			i {
+				@extend .color-white;
+				@extend .color-white-hover;
+			}
+
+			&.btn-flat {
+				@extend .bg-#{$name};
+				@extend .bg-#{$name}-hover;
+				@extend .border-color-#{$name};
+				@extend .border-color-#{$name}-hover;
+				@extend .color-white;
+				@extend .color-white-hover;
+				@extend .color-white;
+				@extend .color-white-hover;
+				@include transition-mixin;
+				border-color: transparent;
+				border-radius:0px;
+				i {
+					@extend .color-white;
+					@extend .color-white-hover;
+				}
+			}
+
+			&.btn-rounded {
+				border-color: transparent;
+				border-radius:20px;
+				@extend .bg-#{$name};
+				@extend .bg-#{$name}-hover;
+				@extend .border-color-#{$name};
+				@extend .border-color-#{$name}-hover;
+				@extend .color-white;
+				@extend .color-white-hover;
+				@include transition-mixin;
+				i {
+					@extend .color-white;
+					@extend .color-white-hover;
+				}
+			}
+
+			&.btn-outline {
+				background-color: transparent !important;
+				border-width: 2px;
+				@extend .border-color-#{$name};
+				@extend .border-color-#{$name}-hover;
+				@extend .color-#{$name};
+				@extend .color-#{$name}-hover;
+				@include transition-mixin;
+				i {
+					@extend .color-#{$name};
+				}
+				&:hover, &:active, &:focus {
+					background-color: transparent !important;
+					i {
+						@extend .color-#{$name}-hover;
+					}
+				}
+				&.btn-rounded {
+					@extend .border-color-#{$name};
+					@extend .border-color-#{$name}-hover;
+					@extend .color-#{$name};
+					@extend .color-#{$name}-hover;
+					border-radius:20px;
+					background-color: transparent !important;
+					i {
+						@extend .color-#{$name};
+					}
+					&:hover, &:active, &:focus {
+						background-color: transparent !important;
+						i {
+							@extend .color-#{$name}-hover;
+						}
+					}
+				}
+			}
+		}		
+	}
+}
+
+.btn-circle {
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 6px 0;
+	font-size: 12px;
+	line-height: 15px;
+	border-radius: 15px;
+	&.btn-lg {
+		width: 50px;
+		height: 50px;
+		padding: 9px 16px 10px 16px;
+		font-size: 18px;
+		line-height: 25px;
+		border-radius: 25px;
+	}
+	&.btn-xl {
+		width: 70px;
+		height: 70px;
+		padding: 9px 16px 10px 16px;
+		font-size: 24px;
+		line-height: 35px;
+		border-radius: 35px;
+	}
+}
+
+.btn-icon {
+	padding-left:2px;
+	padding-right:6px;
+}
+

@@ -1,0 +1,330 @@
+textarea,
+input, textarea:focus, input:focus, *, *:focus {
+    outline: none !important;
+}
+
+.form-control {
+	border-radius:0;
+	+ small {
+		display: block;
+		margin-top: 10px;
+	}
+}
+
+.c-select {
+	&:focus {
+		border-color: transparent !important;
+	}
+}
+
+.c-input {
+    padding-left: 1.5rem;
+	[data-direction="rtl"] & {
+		padding-left: 0;
+		padding-right: 1.5rem;
+	}
+	.c-indicator {
+		right: 0;
+	}
+}
+
+.c-input > input:focus ~ .c-indicator {
+	box-shadow: none;
+}
+
+.switches {
+	.list-group {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.animated-switch > input[type="checkbox"] {
+	display: none;   
+}
+
+.animated-switch > label {
+	cursor: pointer;
+	height: 0px;
+	position: relative; 
+	width: 40px;  
+}
+
+.animated-switch > label::before {
+	background: rgb(0, 0, 0);
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+	content: '';
+	height: 16px;
+	margin-top: -8px;
+	position:absolute;
+	opacity: 0.3;
+	transition: all 0.4s ease-in-out;
+	width: 40px;
+}
+.animated-switch > label::after {
+	background: rgb(255, 255, 255);
+	border-radius: 16px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	content: '';
+	height: 24px;
+	left: -4px;
+	margin-top: -8px;
+	position: absolute;
+	top: -4px;
+	transition: all 0.3s ease-in-out;
+	width: 24px;
+}
+.animated-switch > input[type="checkbox"]:checked + label::before {
+	background: inherit;
+	opacity: 0.5;
+}
+.animated-switch > input[type="checkbox"]:checked + label::after {
+	background: inherit;
+	left: 20px;
+}
+.form-inline {
+	.form-group:not(.floating-labels) {
+		label {
+			margin: 0;
+		}
+		label + input {
+			margin: 0 10px;
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.form-group, .input-group {
+		.input-group-addon {
+			&:first-child {
+				border-left: 0;
+				border-right-width: 1px;
+				border-radius: 0;
+			}
+			&:last-child {
+				border-right: 0;
+				border-left-width: 1px;
+				border-radius: 0;
+			}
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		::-webkit-autofill {
+			background-color: map-get($value, 'odd-color') !important;
+			border-color: map-get($value, 'border-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+		.form-control {
+			background-color: map-get($value, 'odd-color');
+			border-color: map-get($value, 'border-color');
+			color: map-get($value, 'text-color');
+			&:focus {
+				border-color: map-get($value, 'border-color');
+			}
+			@include placeholder {
+				color: map-get($value, 'text-color') !important;
+			}
+		}
+
+		.input-group {
+			.input-group-addon {
+				background-color: map-get($value, 'odd-color');
+				border-color: map-get($value, 'border-color');
+				color: map-get($value, 'text-color');
+			}
+			.input-group-btn {
+				.btn {
+					&.btn-default {
+						background-color: map-get($value, 'odd-color');
+						border-color: map-get($value, 'border-color');
+						color: map-get($value, 'text-color');
+					}
+				}
+			}
+		}
+
+		.file {
+			.file-custom {
+				background-color: map-get($value, 'odd-color');
+				border-color: map-get($value, 'border-color');
+				color: map-get($value, 'text-color');
+				&:before {
+					background-color: map-get($value, 'border-color');
+					border-color: map-get($value, 'border-color');
+					color: map-get($value, 'text-color');
+				}
+			}
+		}
+
+		.c-select {
+			color: map-get($value, 'text-color');
+			border: 1px solid map-get($value, 'border-color');
+			background: map-get($value, 'odd-color');
+		}
+
+		.c-input {
+			color: map-get($value, 'text-color');
+			.c-indicator {
+				background-color: darken(map-get($value, 'hover-color'), 5);
+			}
+		}
+
+	}
+}
+
+@each $name, $color in $bootstrap-colors {
+	.c-input {
+		> input:checked ~ .c-indicator {
+			&.c-indicator-#{$name} {
+				background-color:$color;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.form-group {
+	&.floating-labels {
+		position: relative;
+		width: 100%;
+		margin-bottom: 42px;
+		& input[type="text"],
+		& input[type="password"],
+		& input[type="email"] {
+			position: relative;
+			width: 100%;
+			background: 0 0;
+			padding: 26px 0 12px;
+			font-size: 16px;
+			line-height: 1.4;
+			font-weight: 500;
+			border: none !important;
+			box-shadow: none;
+			z-index: 1;
+			&:focus {
+				outline: 0;
+			}
+		}
+		& label {
+			display: inline-block;
+			position: absolute;
+			margin-bottom: 6px;
+			top: 0;
+			font-size: 13px;
+			font-weight: 300;
+			padding: 0;
+			transition: all .3s ease;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 2px;
+			bottom: 0;
+			left: 50%;
+			z-index: 1000;
+			transition: all .3s ease;
+		}
+		& .error-block {
+			position: absolute;
+			line-height: 0;
+			font-weight: 300;
+			font-size: 13px;
+			color: $brand-danger;
+			line-height: 24px;
+			transition: all 0.5s ease;
+			margin: 0;
+			&.ng-hide {
+				display: block !important;
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+		& .success-block {
+			position: absolute;
+			line-height: 0;
+			font-weight: 300;
+			font-size: 13px;
+			color: $brand-success;
+			line-height: 24px;
+			transition: all 0.5s ease;
+			margin: 0;
+			&.ng-hide {
+				display: block !important;
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+		&.has-focus {
+			/*field has focus*/
+		}
+		&.has-focus label {
+			color: $brand-info;
+		}
+		&.has-focus::after {
+			left: 0;
+			background: $brand-info;
+			width: 100%;
+		}
+		&.has-error {
+			/*field has error*/
+		}
+		&.has-error label {
+			color: $brand-danger;
+		}
+		&.has-error::after {
+			left: 0;
+			background: $brand-danger;
+			width: 100%;
+		}
+		&.has-error .help-block:not(.ng-hide) {
+			position: absolute;
+			color: $brand-danger;
+			opacity: 1;
+			visibility: visible;
+			top: 100%;
+		}
+		&.has-success.has-focus {
+			/*field has success*/
+		}
+		&.has-success.has-focus label {
+			color: $brand-success;
+		}
+		&.has-success.has-focus.has-focus::after {
+			left: 0;
+			background: $brand-success;
+			width: 100%;
+		}
+		&.is-empty:not(.has-focus) label {
+			font-weight: 400;
+			font-size: 14px;
+			top: 32px;
+		}
+	}
+}
+
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.form-group {
+			&.floating-labels {
+				& input[type="text"],
+				& input[type="password"],
+				& input[type="email"] {
+					border-bottom: 1px solid map-get($value, 'floating-labels-border-color') !important;
+					color: map-get($value, 'text-color') !important;
+					input::-webkit-input-placeholder,
+					input:-moz-placeholder,
+					input::-moz-placeholder,
+					input:-ms-input-placeholder {
+						color: map-get($value, 'text-color') !important;
+					}
+				}
+			}
+		}
+	}
+}

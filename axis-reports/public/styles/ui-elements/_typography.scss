@@ -1,0 +1,121 @@
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 300;
+	> small {
+		font-weight: 400;
+	}
+}
+
+a,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+    cursor: pointer;
+    outline: none !important;
+	text-decoration: none !important;
+}
+
+[data-direction="ltr"] {
+	@each $key, $value in $bootstrap-colors {
+		.underline-#{$key} {
+			@include underlined-mixin(40px, 3, $value);
+			&.underline-40 {
+				@include underlined-mixin(40px, 3, $value);
+			}
+			&.underline-80 {
+				@include underlined-mixin(80px, 3, $value);
+			}
+			&.underline-120 {
+				@include underlined-mixin(120px, 3, $value);
+			}
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	@each $key, $value in $bootstrap-colors {
+		.underline-#{$key} {
+			@include underlined-mixin-rtl(40px, 3, $value);
+			&.underline-40 {
+				@include underlined-mixin-rtl(40px, 3, $value);
+			}
+			&.underline-80 {
+				@include underlined-mixin-rtl(80px, 3, $value);
+			}
+			&.underline-120 {
+				@include underlined-mixin-rtl(120px, 3, $value);
+			}
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		code, pre, mark, kbd {
+			background-color: map-get($value, 'code-background-color');
+			color: map-get($value, 'code-text-color');
+		}
+		i {
+			color: map-get($value, 'text-color');
+		}
+		a {
+			color: map-get($value, 'text-color') !important;
+			&:hover,
+			&:focus,
+			&:active {
+				color: map-get($value, 'text-color') !important;
+			}
+		}
+		hr {
+			border-color: map-get($value, 'border-color');
+		}
+		.text-muted {
+			color: darken(map-get($value, 'text-color'), 10) !important;
+		}
+		.page-item {
+			&:nth-child(odd) {
+				.page-link {
+					background-color: map-get($value, 'odd-color');
+					color: map-get($value, 'text-color');
+					border-color: map-get($value, 'border-color');
+					&:hover {
+						background-color: map-get($value, 'hover-color');
+					}
+				}
+			}
+			&:nth-child(even) {
+				.page-link {
+					background-color: map-get($value, 'even-color');
+					color: map-get($value, 'text-color');
+					border-color: map-get($value, 'border-color');
+					&:hover {
+						background-color: map-get($value, 'hover-color');
+					}
+				}
+			}
+		}
+	}
+}
+
+.list-unstyled,
+.list-inline {
+	padding: 0;
+	margin: 0;
+}
+
+[data-direction="ltr"] {
+	.list-inline {
+		margin-right: 10px;
+	}
+}
+
+[data-direction="rtl"] {
+	.blockquote {
+		border-left: 0 !important;
+		border-right: 0.25rem solid #eceeef;
+	}
+	.list-inline {
+		margin-left: 10px;
+	}
+}
+

@@ -1,0 +1,187 @@
+[data-direction="ltr"] {
+	.show-from-right {
+		transform: translate3d(-300px, 0, 0);
+	}
+	.right-sidebar-outer {
+		transition: transform 0.35s linear;
+		position: fixed;
+		top: 54px;
+		bottom: 0;
+		width: 300px;
+		height: 100%;
+		left: 100%;
+		display: block;
+		overflow: hidden;
+		z-index: $zindex-navbar-fixed;
+
+		.right-sidebar-inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			overflow: auto;
+			width: 320px;
+		}
+
+		.right-sidebar {
+			width: 300px;
+		}
+
+		.nav-tabs .nav-link.active, 
+		.nav-tabs .nav-link.active:focus, 
+		.nav-tabs .nav-link.active:hover, 
+		.nav-tabs .nav-item.open .nav-link, 
+		.nav-tabs .nav-item.open .nav-link:focus, 
+		.nav-tabs .nav-item.open .nav-link:hover {
+			border-color: transparent !important;
+		}
+
+		.justified {
+			> ul.nav.nav-tabs {
+				display: table !important;
+				width: 100% !important;
+				> li {
+					float: none !important;
+					display: table-cell !important;
+					> a {
+						text-align: center !important;
+					}
+				}
+			}
+		}
+
+		.tab-content {
+			padding: 0px !important;
+			height: 100%;
+			.tab-pane {
+				padding: 0 0 50px 0 !important;
+				> h5 {
+					margin: 20px;
+				}
+			}
+		}
+
+		.list-group-item {
+			font-size: 14px !important;
+			.text-xs {
+				font-size: 12px;
+			}
+			.clearfix {
+				margin-bottom: 5px;
+			}
+			.text-xs {
+				font-size: 13px;
+			}
+		}
+
+		.timeline-widget-4 {
+			font-size: 13px !important;
+		}
+
+	}
+}
+
+[data-direction="rtl"] {
+	.show-from-right {
+		transform: translate3d(300px, 0, 0);
+	}
+	.right-sidebar-outer {
+		transition: transform 0.35s linear;
+		position: fixed;
+		top: 54px;
+		bottom: 0;
+		width: 300px;
+		height: 100%;
+		right: 100%;
+		display: block;
+		overflow: hidden;
+		z-index: $zindex-navbar-fixed;
+
+		.right-sidebar-inner {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			overflow: auto;
+			width: 320px;
+		}
+
+		.right-sidebar {
+			width: 300px;
+		}
+
+		.nav-tabs .nav-link.active, 
+		.nav-tabs .nav-link.active:focus, 
+		.nav-tabs .nav-link.active:hover, 
+		.nav-tabs .nav-item.open .nav-link, 
+		.nav-tabs .nav-item.open .nav-link:focus, 
+		.nav-tabs .nav-item.open .nav-link:hover {
+			border-color: transparent !important;
+		}
+
+		.justified {
+			> ul.nav.nav-tabs {
+				display: table !important;
+				width: 100% !important;
+				> li {
+					float: none !important;
+					display: table-cell !important;
+					> a {
+						text-align: center !important;
+					}
+				}
+			}
+		}
+
+		.tab-content {
+			padding: 0px !important;
+			height: 100%;
+			.tab-pane {
+				padding: 0 0 50px 0 !important;
+				> h5 {
+					margin: 20px;
+				}
+			}
+		}
+
+		.list-group-item {
+			font-size: 14px !important;
+			.text-xs {
+				font-size: 12px;
+			}
+			.clearfix {
+				margin-bottom: 5px;
+			}
+			.text-xs {
+				font-size: 13px;
+			}
+		}
+
+		.timeline-widget-4 {
+			font-size: 13px !important;
+		}
+
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.right-sidebar-outer {
+			background: map-get($value, 'right-sidebar-background-color') !important;
+			color: map-get($value, 'right-sidebar-text-color') !important;
+			border-left:1px solid map-get($value, 'right-sidebar-border-color');
+
+			.nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover {
+				background-color: map-get($value, 'right-sidebar-background-color') !important;
+				color: map-get($value, 'right-sidebar-text-color') !important;
+				border-color: transparent !important;
+			}
+
+			.list-group-item {
+				.text-xs {
+					color: map-get($value, 'right-sidebar-text-color') !important;
+				}
+			}
+		}
+	}
+}

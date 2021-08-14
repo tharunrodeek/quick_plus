@@ -1,0 +1,126 @@
+.ct-chart {
+    direction: ltr !important;
+    unicode-bidi: embed !important;
+	display: block;
+	min-height:100px;
+	width: 100%;
+	height: 250px;
+	&.h300 {
+		height: 300px;	
+	}
+}
+
+.ct-label {
+    font-size: 0.8rem;
+}
+
+$opacity: ( 75, 100 ); 
+$series: ( "a", "b", "c", "d" );
+
+@each $value in $opacity {
+	@each $serie in $series {
+		@each $name, $color in $colors {
+			.series-#{$serie}-#{$name} {
+				.ct-series {
+					&.ct-series-#{$serie} {
+						.ct-area {
+							fill: $color;
+						}
+						.ct-line {
+							stroke: $color;
+							stroke-width: 3px;
+						}
+						.ct-point {
+							stroke: $color;
+							stroke-width: 6px;
+						}
+						.ct-bar {
+							stroke: $color;
+						}
+						.ct-slice-pie {
+							fill: $color;
+						}
+						.ct-slice-donut {
+							stroke: $color;
+						}
+					}
+				}
+			}
+			.series-#{$serie}-#{$name} {
+					&.opacity-#{$value} {
+					.ct-series {
+						&.ct-series-#{$serie} {
+							.ct-area {
+								fill: $color;
+								fill-opacity: (($value - 10) / 100);
+							}
+							.ct-line {
+								stroke: $color;
+								stroke-opacity: (($value - 10) / 100) + 0.1;
+								stroke-width: 3px;
+							}
+							.ct-point {
+								stroke: $color;
+								stroke-opacity: (($value - 10) / 100) + 0.1;
+								stroke-width: 6px;
+							}
+							.ct-bar {
+								stroke: $color;
+								stroke-opacity: (($value - 10) / 100) + 0.1;
+							}
+							.ct-slice-pie {
+								fill: $color;
+								fill-opacity: (($value - 10) / 100) + 0.1;
+							}
+							.ct-slice-donut {
+								stroke: $color;
+								stroke-opacity: (($value - 10) / 100) + 0.1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.ct-label {
+			fill: map-get($value, 'text-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+		.series-a-default-color {
+			.ct-series {
+				&.ct-series-a {
+					.ct-area {
+						fill: map-get($value, 'hover-color') !important;
+						fill-opacity: 1;
+					}
+					.ct-line {
+						stroke: map-get($value, 'hover-color') !important;
+						stroke-width: 3px;
+						stroke-opacity: 1;
+					}
+					.ct-point {
+						stroke: map-get($value, 'hover-color') !important;
+						stroke-width: 6px;
+						stroke-opacity: 1;
+					}
+					.ct-bar {
+						stroke: map-get($value, 'hover-color') !important;
+						stroke-opacity: 1;
+					}
+					.ct-slice-pie {
+						fill: map-get($value, 'hover-color') !important;
+						fill-opacity: 1;
+					}
+					.ct-slice-donut {
+						stroke: map-get($value, 'hover-color') !important;
+						stroke-opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

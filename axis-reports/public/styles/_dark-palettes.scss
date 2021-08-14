@@ -1,0 +1,101 @@
+//colors
+$white: #ffffff;
+$black: #000000;
+$light: #f5f5f5;
+$dark: #262932;
+$brand-primary: #0275d8;
+$brand-default: #5bc0de;
+$brand-success: #5cb85c;
+$brand-info: #00aced;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+
+//backgrounds
+
+$bg1: #242424;
+$bg2: $dark;
+$bg3: $black;
+
+$backgrounds: (
+	'bg-1': $bg1,
+	'bg-2': $bg2,
+	'bg-3': $bg3,
+);
+
+//initial colors map
+$palette-colors: (
+	'white': $white,
+	'black': $black,
+	'light': $light,
+	'dark': $dark,
+);
+
+//merge backgrounds into colors map
+$palette-colors: map-merge($palette-colors, $backgrounds);
+
+@function generate-dark-palette($palette-colors, $key, $highlight-color, $amount) {
+	@return (
+		'text-color': map-get($palette-colors, 'white'),
+		'background-color': map-get($palette-colors, $key),
+		'highlight-color': $highlight-color,
+		'border-color': lighten(map-get($palette-colors, $key), $amount * 2.5),
+		'hover-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'odd-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'even-color': lighten(map-get($palette-colors, $key), $amount * 1),
+		'left-sidebar-background-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'left-sidebar-border-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'left-sidebar-text-color': map-get($palette-colors, 'white'),
+		'left-sidebar-title-color': map-get($palette-colors, 'white'),
+		'left-sidebar-sideline-color': $highlight-color,
+		'left-sidebar-hover-background-color': lighten(map-get($palette-colors, $key), $amount * 1),
+		'left-sidebar-hover-text-color': map-get($palette-colors, 'white'),
+		'navbar-background-color': map-get($palette-colors, $key),
+		'navbar-text-color': map-get($palette-colors, 'white'),
+		'navbar-border-color': map-get($palette-colors, $key),
+		'code-background-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'code-text-color': $highlight-color,
+		'floating-labels-border-color': map-get($palette-colors, 'white'),
+		'vector-map-text-color': lighten(map-get($palette-colors, $key), $amount * 4),
+		'vector-map-background-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'vector-map-hover-background-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'horizontal-navigation-1-navbar-background-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'horizontal-navigation-1-navbar-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-1-navbar-border-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'horizontal-navigation-1-background-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'horizontal-navigation-1-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-1-border-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'horizontal-navigation-1-dropdown-background-color': lighten(map-get($palette-colors, $key), $amount * 1),
+		'horizontal-navigation-1-dropdown-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-2-navbar-background-color': lighten(map-get($palette-colors, $key), $amount * 4),
+		'horizontal-navigation-2-navbar-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-2-navbar-border-color': lighten(map-get($palette-colors, $key), $amount * 4),
+		'horizontal-navigation-2-background-color': lighten(map-get($palette-colors, $key), $amount * 4),
+		'horizontal-navigation-2-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-2-border-color': lighten(map-get($palette-colors, $key), $amount * 4),
+		'horizontal-navigation-2-dropdown-background-color': lighten(map-get($palette-colors, $key), $amount * 1),
+		'horizontal-navigation-2-dropdown-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-3-navbar-background-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'horizontal-navigation-3-navbar-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-3-navbar-border-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'horizontal-navigation-3-background-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'horizontal-navigation-3-text-color': map-get($palette-colors, 'white'),
+		'horizontal-navigation-3-border-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'horizontal-navigation-3-dropdown-background-color': lighten(map-get($palette-colors, $key), $amount * 1),
+		'horizontal-navigation-3-dropdown-text-color': map-get($palette-colors, 'white'),
+		'mega-menu-background-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'mega-menu-text-color': map-get($palette-colors, 'white'),
+		'mega-menu-border-color': lighten(map-get($palette-colors, $key), $amount * 3),
+		'mega-menu-navbar-background-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'mega-menu-navbar-text-color': map-get($palette-colors, 'white'),
+		'mega-menu-navbar-border-color': lighten(map-get($palette-colors, $key), $amount * 2),
+		'right-sidebar-text-color': map-get($palette-colors, 'white'),
+		'right-sidebar-background-color': lighten(map-get($palette-colors, $key), $amount * 1.5),
+		'right-sidebar-border-color': lighten(map-get($palette-colors, $key), $amount * 1.5),
+		'fullsize-background-image-background-color': map-get($palette-colors, 'dark'),
+		'fullsize-background-image-text-color': map-get($palette-colors, 'white')
+	);
+}
+
+$dark-palette-1: generate-dark-palette($palette-colors, 'bg-1', $brand-success, 5);
+$dark-palette-2: generate-dark-palette($palette-colors, 'bg-2', $brand-success, 5);
+$dark-palette-3: generate-dark-palette($palette-colors, 'bg-3', $brand-success, 5);

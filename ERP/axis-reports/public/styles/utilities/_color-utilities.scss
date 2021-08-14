@@ -1,0 +1,21 @@
+.color-utilities-demo {
+	p {
+		border:1px solid transparent;
+	}			
+}
+
+[data-palette="palette-4"] {
+	.color-utilities-demo {
+		p {
+			&.bg-primary, 
+			&.bg-primary-500 {
+				border:1px solid map-get($colors, 'dark-4-100');
+			}
+		}			
+		h5 {
+			&.color-primary {
+				background: map-get($colors, 'dark-4-100');
+			}
+		}			
+	}
+}

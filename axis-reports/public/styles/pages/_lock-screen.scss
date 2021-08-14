@@ -1,0 +1,46 @@
+.lock-screen-page {
+	position: relative;
+	text-align: center;
+    h1 {
+		margin-top: 100px;
+		margin-bottom: 20px;
+        font-size: 28px;
+		font-weight: normal;
+		text-transform: capitalize;
+    }
+    h4 {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    p {
+        margin-bottom: 40px;
+		font-size:16px;
+		font-weight: 300;
+    }
+
+	.avatar {
+		margin: 10px auto;
+		text-align: center;
+		width: 128px;
+		height: 128px;
+	}
+
+	.buttons {
+		margin-bottom: 40px;
+	}
+
+	.social-buttons {
+		.btn, i {
+			font-size:20px;
+		}
+	}
+}
+
+@media screen and ( max-height: 768px ){
+	.lock-screen-page {
+		h1 {
+			margin-top: 50px;
+		}
+	}
+}
+

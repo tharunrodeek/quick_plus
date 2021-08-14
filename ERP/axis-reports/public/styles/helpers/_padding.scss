@@ -1,0 +1,26 @@
+@for $i from 0 through 10 {
+	.p-#{$i * 5} {
+		padding: #{$i * 5}px !important;
+	}
+}
+@for $i from 0 through 10 {
+	.p-l-#{$i * 5} {
+		padding-left: #{$i * 5}px !important;
+	}
+}
+@for $i from 0 through 10 {
+	.p-r-#{$i * 5} {
+		padding-right: #{$i * 5}px !important;
+	}
+}
+@for $i from 0 through 10 {
+	.p-t-#{$i * 5} {
+		padding-top: #{$i * 5}px !important;
+	}
+}
+@for $i from 0 through 10 {
+	.p-b-#{$i * 5} {
+		padding-bottom: #{$i * 5}px !important;
+	}
+}
+

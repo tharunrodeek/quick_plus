@@ -1,0 +1,124 @@
+body,
+html {
+    height: 100%;
+	min-height: 100%;
+}
+body {
+    font-family: 'Roboto', 'Helvetica', sans-serif !important;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+@include selection {
+    background-color: $brand-success;
+}
+//set default backgrounds for each palette
+.fullsize {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
+	opacity: 1;
+	&.fullsize-light {
+		opacity: 0.33;
+	}
+	&.fullsize-medium {
+		opacity: 0.5;
+	}
+	&.fullsize-dark {
+		opacity: 0.66;
+	}
+	background:transparent !important;
+	> img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		min-width: 50%;
+		min-height: 50%;
+	}
+}
+.footer {
+	text-align: right;
+	padding: 20px 10px;
+	font-size: 13px;
+}
+
+.hidden {
+    display: none !important;
+}
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.pace-inactive {
+    display: none;
+}
+.pace .pace-progress {
+    background: $brand-danger;
+    position: fixed;
+    z-index: 9999 !important;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 3px;
+}
+//empty layout for demos
+[data-layout="empty-layout"] {
+    display: none;
+}
+[data-palette="palette-0"] {
+    display: none;
+}
+[data-direction="none"] {
+    display: none;
+}
+//direction
+*[data-direction="ltr"] {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+*[data-direction="rtl"] {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+[data-direction="rtl"] {
+	.pull-right {
+		float: left !important;
+	}
+	.pull-left {
+		float: right !important;
+	}
+	.text-right {
+		text-align: left !important;
+	}
+	.text-left {
+		text-align: right !important;
+	}
+}
+
+.hidden-ltr {
+	[data-direction="ltr"] & {
+		display: none !important;
+	}
+}
+.hidden-rtl {
+	[data-direction="rtl"] & {
+		display: none !important;
+	}
+}
+

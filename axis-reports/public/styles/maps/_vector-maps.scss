@@ -1,0 +1,18 @@
+.vector-map {
+	width: 100%;
+	min-height: 500px;
+	margin:0 auto;
+	position: relative;
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.hoverinfo {
+			background: map-get($value, 'background-color') !important;
+			color: map-get($value, 'text-color') !important;
+			border-color: map-get($value, 'border-color') !important;
+			box-shadow: none !important;
+			border-radius: 5px;
+		}
+	}
+}

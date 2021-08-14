@@ -1,0 +1,13 @@
+[data-direction="ltr"] {
+	.treegrid-expander {
+		margin-right: 10px;
+	}
+}
+[data-direction="rtl"] {
+	.treegrid-expander {
+		margin-left: 10px;
+		&.treegrid-expander-collapsed {
+			transform: rotate(180deg) !important;
+		}
+	}
+}

@@ -1,0 +1,61 @@
+.finance-widget-1 {
+	width: 100%;
+	position: relative;
+	font-size: 14px;
+	.list-group {
+		margin: 0;
+		padding: 0;
+		.list-group-item {
+			border-left: 0;
+			border-right: 0;
+			border-radius: 0;
+			&:first-child {
+				border-top: 0;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+        [data-direction="ltr"] & {
+			.price {
+				margin-right: 10px;
+			}
+			.variation {
+				margin-right: 10px;
+			}
+		}
+        [data-direction="rtl"] & {
+			.price {
+				margin-left: 10px;
+			}
+			.variation {
+				margin-left: 10px;
+			}
+		}
+		.icon {
+			font-size: 18px;
+			margin-top: -4px;
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.finance-widget-1 {
+			.list-group {
+				.list-group-item {
+					color: map-get($value, 'text-color');
+					&:nth-child(odd) {
+						background-color: map-get($value, 'odd-color');
+					}
+					&:nth-child(even) {
+						background-color: map-get($value, 'even-color');
+					}
+					&:hover {
+						background-color: map-get($value, 'hover-color');
+					}
+				}
+			}
+		}
+	}
+}

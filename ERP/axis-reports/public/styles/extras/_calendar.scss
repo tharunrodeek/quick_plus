@@ -1,0 +1,115 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.fc-button {
+			background-color: map-get($value, 'even-color') !important;
+			border-color: map-get($value, 'border-color') !important;
+			color: map-get($value, 'text-color') !important;
+			box-shadow: none !important;
+			text-shadow: none !important;
+		}
+		.fc-unthemed th,
+		.fc-unthemed td,
+		.fc-unthemed thead,
+		.fc-unthemed tbody,
+		.fc-unthemed .fc-divider,
+		.fc-unthemed .fc-row,
+		.fc-unthemed .fc-popover {
+			border-color: map-get($value, 'border-color');
+		}
+
+		.fc-unthemed .fc-popover {
+			background-color: map-get($value, 'background-color');
+		}
+
+		.fc-unthemed .fc-divider,
+		.fc-unthemed .fc-popover .fc-header {
+			background-color: map-get($value, 'background-color');
+		}
+
+		.fc-unthemed .fc-popover .fc-header .fc-close {
+			background-color: map-get($value, 'text-color');
+		}
+
+		.fc-unthemed .fc-today {
+			background: map-get($value, 'background-color');
+		}
+
+		.fc-highlight { 
+			background: map-get($value, 'hover-color');
+			opacity: .3;
+			filter: alpha(opacity=30); /* for IE */
+		}
+
+		.fc-bgevent { 
+			background: map-get($value, 'hover-color');
+		}
+
+		.fc-nonbusiness { 
+			background: map-get($value, 'background-color');
+		}
+
+		.fc-state-default { 
+			background-color: map-get($value, 'background-color') !important;
+			background-image: none !important;
+			background-repeat: no-repeat !important;
+			border-color: map-get($value, 'border-color') !important;
+			color: map-get($value, 'text-color');
+			text-shadow: none !important;
+			box-shadow: none !important;
+		}
+
+		.fc-state-hover,
+		.fc-state-down,
+		.fc-state-active,
+		.fc-state-disabled {
+			color: map-get($value, 'text-color');
+			background-color: map-get($value, 'hover-color');
+		}
+
+		.fc-state-hover {
+			color: map-get($value, 'text-color');
+			text-decoration: none;
+			background-position: 0 0;
+		}
+
+		.fc-state-down,
+		.fc-state-active {
+			background-color: map-get($value, 'text-color');
+			background-image: none;
+			box-shadow: none !important;
+		}
+
+		.fc-state-disabled {
+			background-image: none;
+			opacity: 0.65;
+			filter: alpha(opacity=65);
+		}
+
+		.fc-popover {
+			box-shadow: none !important;
+		}
+
+		.fc-event {
+			border: 1px solid map-get($value, 'border-color');
+			background-color: $brand-success;
+		}
+
+		.fc-event,
+		.fc-event:hover,
+		.ui-widget .fc-event {
+			color: map-get($value, 'text-color');
+		}
+
+		.fc-event .fc-bg { 
+			background: map-get($value, 'background-color');
+			opacity: .25;
+			filter: alpha(opacity=25); /* for IE */
+		}
+
+		.fc-now-indicator {
+			border: 0 solid $brand-danger;
+		}
+
+	}
+}
+

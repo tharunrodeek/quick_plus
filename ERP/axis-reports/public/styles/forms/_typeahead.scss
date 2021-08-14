@@ -1,0 +1,81 @@
+.typeahead {
+	&.dropdown-menu {
+		background: transparent !important;
+		padding: 0;
+		box-shadow: none;
+		border-radius: 0;
+		border: 0;
+		.dropdown-item {
+			padding: 10px 15px;
+			font-weight:300;
+			font-size: 15px;
+			position: relative;
+			transition: all .4s;
+			transition-property: all;
+			transition-duration: 0.4s;
+			transition-timing-function: initial;
+			transition-delay: initial;
+			font-weight: 400;
+			text-shadow: none !important;
+			border: none !important;
+		}
+	}
+}
+
+[data-direction="ltr"] {
+	.typeahead {
+		&.dropdown-menu {
+			//left: 0;
+			min-width: 160px;
+			.dropdown-item {
+				text-align: left !important;
+				min-width: 160px;
+			}
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.typeahead {
+		&.dropdown-menu {
+			left: 100% !important;
+			right: 0;
+			min-width: 160px;
+			margin-right: 20px;
+			.dropdown-item {
+				text-align: right !important;
+				min-width: 160px;
+			}
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.typeahead {
+			&.dropdown-menu {
+				.dropdown-item {
+					background: map-get($value, 'even-color') !important;
+					color: map-get($value, 'text-color') !important;
+					border-top:1px solid map-get($value, 'odd-color');
+					border-left:1px solid map-get($value, 'odd-color');
+					border-right:1px solid map-get($value, 'odd-color');
+					i {
+						color: map-get($value, 'text-color') !important;
+					}
+					&:last-child {
+						border-bottom:1px solid map-get($value, 'odd-color');
+					}
+					&:hover {
+						background: map-get($value, 'hover-color') !important;
+					}
+					.active & a, .active & a:focus, .active & a:hover {
+						background: map-get($value, 'odd-color') !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+

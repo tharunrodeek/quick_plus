@@ -1,0 +1,74 @@
+.no-bg, 
+.bg-transparent {
+	background-color: transparent !important;
+}
+
+$amount: 10;
+@each $key, $value in $colors {
+	.bg-#{$key}
+	{
+		background-color: $value !important;
+		&-hover {
+			&:hover, &:active, &:focus {
+				background-color: darken($value, $amount) !important;
+			}
+		}
+		&-odd {
+			&:nth-child(odd) {
+				background-color: $value !important;
+			}
+		}
+		&-even {
+			&:nth-child(even) {
+				background-color: $value !important;
+			}
+		}
+	}
+	
+	[data-bg="#{$key}"] {
+		background-color: $value !important;
+	}
+	.color-#{$key} {
+		color: $value !important;
+		&-hover {
+			&:hover, &:active, &:focus {
+				color: darken($value, $amount) !important;
+			}
+		}
+	}
+	[data-color="#{$key}"] {
+		color: $value !important;
+	}
+
+	.border-color-#{$key} {
+		border-color: $value !important;
+		&-hover {
+			&:hover, &:active, &:focus {
+				border-color: darken($value, $amount) !important;
+			}
+		}
+	}
+	[data-border-color="#{$key}"] {
+		border-color: $value !important;
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.text-default-color {
+			color: map-get($value, 'text-color');
+		}
+		.bg-default-color {
+			background-color: map-get($value, 'background-color');
+		}
+		.bg-hover-color {
+			background-color: map-get($value, 'hover-color');
+		}
+		.bg-even-color {
+			background-color: map-get($value, 'even-color');
+		}
+		.bg-odd-color {
+			background-color: map-get($value, 'odd-color');
+		}
+	}
+}

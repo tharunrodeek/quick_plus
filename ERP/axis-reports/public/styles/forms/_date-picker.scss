@@ -1,0 +1,45 @@
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.datepicker {
+			background: map-get($value, 'even-color') !important;
+			color: map-get($value, 'text-color') !important;
+			font-size: 13px;
+			td, th {
+				background: map-get($value, 'even-color') !important;
+				color: map-get($value, 'text-color') !important;
+				&:hover {
+					background: map-get($value, 'hover-color') !important;
+					color: map-get($value, 'text-color') !important;
+				}
+			}
+			&.datepicker-dropdown,
+			&.dropdown-menu {
+				background: map-get($value, 'even-color') !important;
+				color: map-get($value, 'text-color') !important;
+				font-size: 13px;
+				td, th {
+					background: map-get($value, 'even-color') !important;
+					color: map-get($value, 'text-color') !important;
+					&:hover {
+						background: map-get($value, 'hover-color') !important;
+						color: map-get($value, 'text-color') !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.datepicker-dropdown:before,
+.datepicker-dropdown:after {
+	display: none !important;
+}
+
+[data-direction="rtl"] {
+	#date-picker3 {
+		> input, 
+		> span {
+			border-radius: 0;
+		}
+	}
+}

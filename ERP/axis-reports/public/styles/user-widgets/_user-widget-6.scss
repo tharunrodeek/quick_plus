@@ -1,0 +1,25 @@
+.user-widget-6 {
+	min-height: 200px;
+	width: 100%;
+	position: relative;
+	&.bg {
+		position: relative;
+		height: auto;
+		min-height: 100%;
+		width: 100%;
+		background-image: url(https://unsplash.it/600/200?image=675&gravity=center);
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.row {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.img-circle {
+		border: 3px solid #fff;
+	}
+}
+

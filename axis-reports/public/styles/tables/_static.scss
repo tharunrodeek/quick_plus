@@ -1,0 +1,117 @@
+[data-direction="ltr"] {
+	.demo-tables,
+	.demo-table {
+		.table {
+			th, td {
+				text-align: left !important;
+			}		
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.demo-tables,
+	.demo-table {
+		.table {
+			th, td {
+				text-align: right !important;
+			}		
+		}
+	}
+}
+
+.table {
+	> caption + thead,
+	> colgroup + thead,
+	> thead:first-child {
+		> tr:first-child {
+			> th, > td {
+				border-top: 0;
+			}
+		}
+	}
+}
+.table-bordered {
+	> thead > tr {
+		> th, > td {
+			border-bottom-width: 1px;
+		}
+	}
+}
+.table {
+	td {
+		progress, .progress {
+			margin: 3px 0 0 0;
+			vertical-align: middle;
+		}
+	}
+}
+.table-responsive {
+	border: 0;
+}
+.table-unbordered {
+	tr, td, th, thead, tbody {
+		border: 0 !important;
+	}
+}
+
+@each $key, $value in $palettes {
+    [data-palette="#{$key}"] {
+        .table {
+            > thead > tr > th {
+                border-bottom: 1px solid map-get($value, 'border-color');
+            }
+            > tbody + tbody {
+                border-top: 1px solid map-get($value, 'border-color');
+            }
+        }
+        .table > thead > tr > th,
+        .table > tbody > tr > th,
+        .table > tfoot > tr > th,
+        .table > thead > tr > td,
+        .table > tbody > tr > td,
+        .table > tfoot > tr > td {
+            border-top: 1px solid map-get($value, 'border-color');
+        }
+        .table-bordered {
+            border-color: map-get($value, 'border-color');
+        }
+        .table-bordered > thead > tr > th,
+        .table-bordered > tbody > tr > th,
+        .table-bordered > tfoot > tr > th,
+        .table-bordered > thead > tr > td,
+        .table-bordered > tbody > tr > td,
+        .table-bordered > tfoot > tr > td {
+            border-color: map-get($value, 'border-color');
+        }
+        .table-striped {
+            > tbody > tr:nth-child(even) {
+                > td, > th {
+                    background-color: map-get($value, 'even-color');
+                }
+            }
+            > tbody > tr:nth-child(odd) {
+                > td, > th {
+                    background-color: map-get($value, 'odd-color');
+                }
+            }
+        }
+        .table-hover {
+            > tbody > tr:hover {
+                > td, > th {
+                    background-color: map-get($value, 'hover-color');
+                }
+            }
+        }
+    }
+}
+
+//custom table for e-commerce
+.e-commerce-dashboard,
+.e-commerce-table {
+    td {
+        display: table-cell !important;
+        vertical-align: middle !important;
+        border-color: transparent !important;
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "invoice_report": [
+    {
+      "invoice_no": 1,
+      "transaction_date": 1,
+      "customer_name": 1,
+      "reference_customer": 1,
+      "created_employee": 1,
+      "payment_status": 1,
+      "customer_name": 1,
+      "customer_name": 1,
+      "customer_name": 1
+    }
+  ]
+}

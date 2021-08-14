@@ -1,0 +1,37 @@
+.invoice {
+	padding: 20px;
+	.invoice-title {
+		h3 {
+			display:block;
+		}
+	}
+	.table {
+		tbody {
+			tr {
+				td {
+					border: 0;
+				}
+			}
+		}
+	}
+	[data-direction="ltr"] & {
+		.text-right {
+			text-align: right;
+		}
+	}
+	[data-direction="rtl"] & {
+		.text-right {
+			text-align: left;
+		}
+	}
+
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.invoice {
+			background: map-get($value, 'odd-color') !important;
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.text-widget-7 {
+	width: 100%;
+	position: relative;
+	padding:10px 20px;
+	.amount {
+		font-size:24px;
+	}
+	.title {
+		font-size:12px;
+	}
+	&.text-widget-left {
+		text-align: left !important;
+	}
+	&.text-widget-center {
+		text-align: center !important;
+	}
+	&.text-widget-right {
+		text-align: right !important;
+	}
+}

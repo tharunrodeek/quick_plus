@@ -1,0 +1,150 @@
+.list-inline {
+	li {
+		display: inline-block;
+	}
+}
+
+.list-group, 
+.media-list {
+	margin: 0;
+	padding: 0;
+}
+
+.list-group-with-icons {
+	.list-group-item {
+		position: relative;
+		padding-top:20px;
+		.fa-stack {
+			position: absolute;
+			top: 5px !important;
+			left: 20px !important;
+			width: 60px;
+		}
+		[data-direction="ltr"] & {
+			.fa-stack {
+				position: absolute;
+				top: 5px !important;
+				left: 20px !important;
+				width: 60px;
+			}
+		}
+		[data-direction="rtl"] & {
+			.fa-stack {
+				position: absolute;
+				top: 5px !important;
+				right: 20px !important;
+				width: 60px;
+			}
+		}
+		h4 {
+			font-size: 16px;
+		}
+		p {
+			font-size: 14px;
+		}
+		[data-direction="ltr"] & {
+			h4, p {
+				padding-left: 70px;
+			}
+		}
+		[data-direction="rtl"] & {
+			h4, p {
+				padding-right: 70px;
+			}
+		}
+		
+	}
+}
+.bs-media {
+	> .media {
+		padding: 20px;
+		margin: 0;
+		.img-circle {
+			height: 60px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+.media-list {
+	> .media {
+		padding: 20px 10px;
+		margin: 0;
+		.img-circle {
+			height: 60px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.list-group-item {
+			color: map-get($value, 'text-color');
+			background: map-get($value, 'background-color');
+			border-color: map-get($value, 'border-color');
+			&:nth-child(odd) {
+				background: map-get($value, 'odd-color');
+			}
+			&:nth-child(even) {
+				background: map-get($value, 'even-color');
+			}
+			&:hover {
+				background: map-get($value, 'hover-color');
+			}
+		}
+
+		a.list-group-item:focus, 
+		a.list-group-item:hover, 
+		button.list-group-item:focus, 
+		button.list-group-item:hover {
+			color: map-get($value, 'text-color');
+			background: map-get($value, 'hover-color');
+			border-color: map-get($value, 'border-color');
+		}
+
+		a.list-group-item .list-group-item-heading, 
+		button.list-group-item .list-group-item-heading {
+			color: map-get($value, 'text-color');
+		}
+
+		a.list-group-item, 
+		button.list-group-item {
+			color: map-get($value, 'text-color');
+		}
+
+		.bs-media {
+			> .media {
+				&:nth-child(odd) {
+					background: map-get($value, 'odd-color');
+				}
+				&:nth-child(even) {
+					background: map-get($value, 'even-color');
+				}
+				&:hover {
+					background: map-get($value, 'hover-color');
+				}
+			}
+		}
+		.media-list {
+			> .media {
+				&:nth-child(odd) {
+					background: map-get($value, 'odd-color');
+				}
+				&:nth-child(even) {
+					background: map-get($value, 'even-color');
+				}
+				&:hover {
+					background: map-get($value, 'hover-color');
+				}
+			}
+		}
+	}
+}

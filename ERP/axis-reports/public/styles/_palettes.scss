@@ -1,0 +1,35 @@
+//@import 'light-palettes';
+@import 'dark-palettes';
+@import 'light-and-dark-palettes';
+@import 'coloured-palettes';
+
+//palette map
+$palettes: (
+	'palette-1': $dark-palette-1,
+	'palette-2': $dark-palette-2,
+	'palette-3': $dark-palette-3,
+	//'palette-4': $light-palette-1,
+	//'palette-5': $light-palette-2,
+	//'palette-6': $light-palette-3,
+	'palette-4': $light-and-dark-palette-1,
+	'palette-5': $light-and-dark-palette-2,
+	'palette-6': $light-and-dark-palette-3,
+	'palette-7': $coloured-palette-1,
+	'palette-8': $coloured-palette-2,
+	'palette-9': $coloured-palette-3,
+	'palette-10': $coloured-palette-4,
+	'palette-11': $coloured-palette-5,
+	'palette-12': $coloured-palette-6,
+	'palette-13': $coloured-palette-7,
+	'palette-14': $coloured-palette-8,
+	'palette-15': $coloured-palette-9,
+	'palette-16': $coloured-palette-10,
+	'palette-17': $coloured-palette-11,
+	'palette-18': $coloured-palette-12,
+	'palette-19': $coloured-palette-13,
+	'palette-20': $coloured-palette-14,
+	'palette-21': $coloured-palette-15,
+	'palette-22': $coloured-palette-16,
+	'palette-23': $coloured-palette-17,
+);
+

@@ -1,0 +1,32 @@
+@for $i from 0 through 5 {
+	.w-#{$i * 10} {
+		width: #{$i * 10}px !important;
+	}
+	.m-w-#{$i * 10} {
+		min-width: #{$i * 10}px !important;
+	}
+}
+.w-100 {
+    width: 100px !important;
+}
+.m-w-100 {
+    min-width: 100px !important;
+}
+.w-150 {
+    width: 150px !important;
+}
+.m-w-150 {
+    min-width: 150px !important;
+}
+.w-200 {
+    width: 200px !important;
+}
+.m-w-200 {
+    min-width: 200px !important;
+}
+.w-100p {
+    width: 100% !important;
+}
+.m-w-100p {
+    min-width: 100% !important;
+}

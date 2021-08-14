@@ -1,0 +1,284 @@
+$size-sm:60px;
+$size-md:80px;
+$size-lg:100px;
+[data-direction="ltr"] {
+    .text-widget-10 {
+        &.text-widget-sm {
+            width: 100%;
+            display: block;
+            position: relative;
+            height: $size-sm;
+            overflow: hidden;
+            .row, .col-xs-12 {
+                padding: 0;
+                margin: 0;
+            }
+            .left {
+                width: $size-sm;
+                height: $size-sm;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .circle {
+					display: block;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    z-index: 1 !important;
+                    height: $size-sm - 20;
+                    width: $size-sm - 20;
+                }
+                i {
+                    font-size: ($size-sm / 2) - 5;
+                    line-height: $size-sm;
+                    z-index: 2 !important;
+                }
+            }
+            .right {
+                padding-left: $size-sm;
+                height: $size-sm;
+                .title {
+                    padding: 10px 20px 0 20px;
+                    font-size: 12px;
+                }
+                .numbers {
+                    font-size: 15px;
+                    padding: 0 20px;
+                }
+            }
+        }
+        &.text-widget-md {
+            width: 100%;
+            display: block;
+            position: relative;
+            height: $size-md;
+            overflow: hidden;
+            .row, .col-xs-12 {
+                padding: 0;
+                margin: 0;
+            }
+            .left {
+                width: $size-md;
+                height: $size-md;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .circle {
+					display: block;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    z-index: 1;
+                    height: $size-md - 20;
+                    width: $size-md - 20;
+                }
+                i {
+                    font-size: $size-md / 2;
+                    line-height: $size-md;
+                    z-index: 2;
+                }
+            }
+            .right {
+                padding-left: $size-md;
+                height: $size-md;
+                .title {
+                    padding: 16px 20px 0 20px;
+                    font-size: 13px;
+                }
+                .numbers {
+                    font-size: 16px;
+                    padding: 0 20px;
+                }
+            }
+        }
+        &.text-widget-lg {
+            width: 100%;
+            display: block;
+            position: relative;
+            height: $size-lg;
+            overflow: hidden;
+            .row, .col-xs-12 {
+                padding: 0;
+                margin: 0;
+            }
+            .left {
+                width: $size-lg;
+                height: $size-lg;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .circle {
+					display: block;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    z-index: 1;
+                    height: $size-lg - 20;
+                    width: $size-lg - 20;
+                }
+                i {
+                    font-size: $size-lg / 2;
+                    line-height: $size-lg;
+                    z-index: 2;
+                }
+            }
+            .right {
+                padding-left: $size-lg;
+                height: $size-lg;
+                .title {
+                    padding: 22px 20px 0 20px;
+                    font-size: 14px;
+                }
+                .numbers {
+                    font-size: 22px;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}
+[data-direction="rtl"] {
+    .text-widget-10 {
+        &.text-widget-sm {
+            width: 100%;
+            display: block;
+            position: relative;
+            height: $size-sm;
+            overflow: hidden;
+            .row, .col-xs-12 {
+                padding: 0;
+                margin: 0;
+            }
+            .left {
+                width: $size-sm;
+                height: $size-sm;
+                position: absolute;
+                top: 0;
+                right: 0;
+                .circle {
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 1 !important;
+                    height: $size-sm - 20;
+                    width: $size-sm - 20;
+                }
+                i {
+                    font-size: ($size-sm / 2) - 5;
+                    line-height: $size-sm;
+                    z-index: 2 !important;
+                }
+            }
+            .right {
+                padding-right: $size-sm;
+                height: $size-sm;
+                .title {
+                    padding: 10px 20px 0 20px;
+                    font-size: 12px;
+                }
+                .numbers {
+                    font-size: 15px;
+                    padding: 0 20px;
+                }
+            }
+        }
+        &.text-widget-md {
+            width: 100%;
+            display: block;
+            position: relative;
+            height: $size-md;
+            overflow: hidden;
+            .row, .col-xs-12 {
+                padding: 0;
+                margin: 0;
+            }
+            .left {
+                width: $size-md;
+                height: $size-md;
+                position: absolute;
+                top: 0;
+                right: 0;
+                .circle {
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 1;
+                    height: $size-md - 20;
+                    width: $size-md - 20;
+                }
+                i {
+                    font-size: $size-md / 2;
+                    line-height: $size-md;
+                    z-index: 2;
+                }
+            }
+            .right {
+                padding-right: $size-md;
+                height: $size-md;
+                .title {
+                    padding: 16px 20px 0 20px;
+                    font-size: 13px;
+                }
+                .numbers {
+                    font-size: 16px;
+                    padding: 0 20px;
+                }
+            }
+        }
+        &.text-widget-lg {
+            width: 100%;
+            display: block;
+            position: relative;
+            height: $size-lg;
+            overflow: hidden;
+            .row, .col-xs-12 {
+                padding: 0;
+                margin: 0;
+            }
+            .left {
+                width: $size-lg;
+                height: $size-lg;
+                position: absolute;
+                top: 0;
+                right: 0;
+                .circle {
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 1;
+                    height: $size-lg - 20;
+                    width: $size-lg - 20;
+                }
+                i {
+                    font-size: $size-lg / 2;
+                    line-height: $size-lg;
+                    z-index: 2;
+                }
+            }
+            .right {
+                padding-right: $size-lg;
+                height: $size-lg;
+                .title {
+                    padding: 22px 20px 0 20px;
+                    font-size: 14px;
+                }
+                .numbers {
+                    font-size: 22px;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}

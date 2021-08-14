@@ -1,0 +1,65 @@
+[data-direction="ltr"] {
+	.user-widget-8 {
+		.media-left {
+			position: relative;
+			padding-top: 0 !important;
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			.icon {
+				position: absolute;
+				top: 25px;
+				left: 50px;
+			}
+		}
+		h5 {
+			font-size: 15px;
+		}
+		p{
+			font-size: 13px;
+			margin-bottom: 0;
+		}
+	}
+}
+[data-direction="rtl"] {
+	.user-widget-8 {
+		.media-left {
+			position: relative;
+			padding-top: 0 !important;
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			.icon {
+				position: absolute;
+				top: 25px;
+				right: 50px;
+			}
+		}
+		h5 {
+			font-size: 15px;
+		}
+		p{
+			font-size: 13px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.user-widget-8 {
+			.media {
+				color: map-get($value, 'text-color');
+				background: map-get($value, 'background-color');
+				&:nth-child(odd) {
+					background: map-get($value, 'odd-color');
+				}
+				&:nth-child(even) {
+					background: map-get($value, 'even-color');
+				}
+				&:hover {
+					background: map-get($value, 'hover-color');
+				}
+			}
+		}
+	}
+}

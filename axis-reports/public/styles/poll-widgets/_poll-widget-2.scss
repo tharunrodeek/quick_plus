@@ -1,0 +1,26 @@
+.poll-widget-2 {
+    width: 100%;
+    position: relative;
+    .list-unstyled {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        li {
+            height: 30px !important;
+            line-height: 30px !important;
+            font-weight: normal;
+            font-size: 13px;
+            text-transform: uppercase;
+			overflow: hidden;
+        }
+    }
+}
+[data-direction="rtl"] {
+    .poll-widget-2 {
+        .list-unstyled {
+            li {
+                text-align: right !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,235 @@
+.hfx {	
+	width: 300px;
+	height: 200px;
+	display: block;
+	background: #ccc;
+	margin:20px;
+}
+
+@each $name, $color in $bootstrap-colors {
+	.underlined-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			background: $color;
+			height: 3px;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+			z-index: 2;
+			left: 0;
+			right: 0;
+			min-width: 100%;			
+		}
+	}
+	.underline-from-center-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 50%;
+			right: 50%;
+			bottom: 0;
+			background: $color;
+			height: 3px;
+			min-width: 0;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover {
+			&:before {
+				z-index: 2;
+				left: 0;
+				right: 0;
+				min-width: 100%;			
+			}
+		}
+	}
+	.underline-from-left-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 0%;
+			bottom: 0;
+			background: $color;
+			height: 3px;
+			min-width: 0;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover {
+			&:before {
+				z-index: 2;
+				min-width: 100%;			
+			}
+		}
+	}
+	.underline-from-right-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 100%;
+			bottom: 0;
+			background: $color;
+			height: 3px;
+			min-width: 0;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover {
+			&:before {
+				z-index: 2;
+				left: 0;
+				min-width: 100%;			
+			}
+		}
+	}
+	.overline-from-center-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 50%;
+			right: 50%;
+			top: 0;
+			background: $color;
+			height: 3px;
+			min-width: 0;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover {
+			&:before {
+				z-index: 2;
+				left: 0;
+				right: 0;
+				min-width: 100%;			
+			}
+		}
+	}
+	.overline-from-left-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 0%;
+			top: 0;
+			background: $color;
+			height: 3px;
+			min-width: 0;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover {
+			&:before {
+				z-index: 2;
+				min-width: 100%;			
+			}
+		}
+	}
+	.overline-from-right-#{$name} {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		overflow: hidden;
+		position: relative;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: 100%;
+			top: 0;
+			background: $color;
+			height: 3px;
+			min-width: 0;
+			display: inline-block;
+			-webkit-transition-property: all;
+			transition-property: all;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+
+		&:hover {
+			&:before {
+				z-index: 2;
+				left: 0;
+				min-width: 100%;			
+			}
+		}
+	}
+}
+
+@for $i from 0 through 50 {
+	.delay-#{$i * 100} { 
+		animation-delay: #{($i) * 100}ms; 
+	}
+}

@@ -1,0 +1,78 @@
+#board-1,
+#board-2,
+#board-3,
+#board-4 {
+	h5 {
+		font-size: 14px !important;
+	}
+	p {
+		font-size: 13px !important;
+	}
+}
+
+#left-list {
+	> div {
+		text-align: center;
+		height: 140px;
+		width: 140px;
+		padding: 10px;
+		float: left;
+		margin: 0 20px 20px 0;
+		cursor: move;
+		cursor: grab;
+		cursor: -moz-grab;
+		cursor: -webkit-grab;
+		color: #fff;
+		&:nth-child(even) {
+			background-color: $brand-success;
+		}
+		&:nth-child(odd) {
+			background-color: darken($brand-success, 5);
+		}
+		&:hover {
+			background-color: darken($brand-success, 10);
+		}
+		&.gu-transit {
+			background-color: lighten($brand-danger, 10);
+		}
+	}
+	[data-direction="rtl"] & {
+		> div {
+			float: right;
+			margin: 0 0 20px 20px;
+		}
+	}
+}
+#right-list {
+	> div {
+		text-align: center;
+		height: 140px;
+		width: 140px;
+		padding: 10px;
+		float: left;
+		margin: 0 20px 20px 0;
+		cursor: move;
+		cursor: grab;
+		cursor: -moz-grab;
+		cursor: -webkit-grab;
+		&:nth-child(even) {
+			background-color: $brand-warning;
+		}
+		&:nth-child(odd) {
+			background-color: darken($brand-warning, 5);
+		}
+		&:hover {
+			background-color: darken($brand-warning, 10);
+		}
+		&.gu-transit {
+			background-color: lighten($brand-danger, 10);
+		}
+	}
+	[data-direction="rtl"] & {
+		> div {
+			float: right;
+			margin: 0 0 20px 20px;
+		}
+	}
+}
+

@@ -1,0 +1,60 @@
+.progress-sm, .progress-bar {
+	height: 0.5rem !important;
+}
+.progress-xs, .progress-bar {
+	height: 0.33rem !important;
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+
+		.progress[value] {
+			color: map-get($value, 'hover-color');
+		}
+
+		.progress[value]::-webkit-progress-bar {
+			background-color: map-get($value, 'hover-color');
+		}
+		.progress[value]::-webkit-progress-value {
+			background-color: map-get($value, 'hover-color');
+		}
+
+		@media screen and (min-width:0\0) {
+		  .progress {
+			  background-color: map-get($value, 'hover-color');
+		  }
+		  .progress-bar {
+			  background-color: map-get($value, 'hover-color');
+		  }
+		}
+
+		@each $name, $color in $bootstrap-colors {
+			.progress-#{$name} {
+			  &[value]::-webkit-progress-value {
+				background-color: $color;
+			  }
+
+			  &[value]::-moz-progress-bar {
+				background-color: $color;
+			  }
+
+			}
+		}
+
+	}
+}
+
+[data-direction="rtl"] {
+
+	.progress[value] {
+		border-radius: 0 !important;
+	}
+
+	.progress[value]::-webkit-progress-bar {
+		border-radius: 0 !important;
+	}
+	.progress[value]::-webkit-progress-value {
+		border-radius: 0 !important;
+	}
+
+}

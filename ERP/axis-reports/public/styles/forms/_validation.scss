@@ -1,0 +1,23 @@
+.form-group {
+	&.has-error {
+		&.has-danger {
+			label {
+				color: $brand-danger !important;
+			}
+			.form-control {
+				border-color:$brand-danger !important;	
+			}
+			&.has-feedback {
+				.input-group-addon {
+					border-color:$brand-danger !important;	
+				}
+			}
+		}
+		.help-block {
+			&.with-errors {
+				margin-top:10px;
+				color: $brand-danger !important;
+			}
+		}
+	}
+}

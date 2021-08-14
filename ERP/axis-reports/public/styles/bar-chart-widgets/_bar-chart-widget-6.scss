@@ -1,0 +1,16 @@
+.bar-chart-widget-6 {
+	background: transparent !important;
+	min-height:100px;
+	overflow: hidden;
+	width: 100%;
+	font-weight:300;
+	padding: 0;
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.bar-chart-widget-6 {
+			color: map-get($value, 'text-color') !important;
+		}
+	}
+}

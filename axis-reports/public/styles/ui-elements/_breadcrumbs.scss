@@ -1,0 +1,174 @@
+.breadcrumb {
+	> li {
+		float: left;
+	}
+	&.icon-home {
+		> li:first-child {
+			&:before {
+				font-family: FontAwesome;
+				content: "\f015"; //icon-home
+				padding-right:8px;
+			}
+		}
+	}
+	&.icon-th {
+		> li:first-child {
+			&:before {
+				font-family: FontAwesome;
+				content: "\f00a"; //icon-th
+				padding-right:8px;
+			}
+		}
+	}
+	&.icon-th-large {
+		> li:first-child {
+			&:before {
+				font-family: FontAwesome;
+				content: "\f009"; //icon-th-large
+				padding-right:8px;
+			}
+		}
+	}
+	&.icon-angle-right {
+		> li {
+			+ li:before {
+				font-family: FontAwesome;
+				content: "\f105"; //icon-angle-right
+			}
+		}
+	}
+	&.icon-angle-double-right {
+		> li {
+			+ li:before {
+				font-family: FontAwesome;
+				content: "\f101"; //icon-angle-double-right
+			}
+		}
+	}
+}
+
+[data-direction="rtl"] {
+	.breadcrumb {
+		> li {
+			float: right;
+			margin-left: 8px;
+			&:last-child {
+				&:after {
+					margin-left: 8px;
+				}
+			}
+		}
+		&.icon-home {
+			> li:first-child {
+				&:before {
+					display: none;
+				}
+				&:after {
+					font-family: FontAwesome;
+					content: "\f015"; //icon-home
+					padding-left:8px;
+				}
+			}
+		}
+		&.icon-th {
+			> li:first-child {
+				&:before {
+					display: none;
+				}
+				&:after {
+					font-family: FontAwesome;
+					content: "\f00a"; //icon-th
+					padding-left:8px;
+				}
+			}
+		}
+		&.icon-th-large {
+			> li:first-child {
+				&:before {
+					display: none;
+				}
+				&:after {
+					font-family: FontAwesome;
+					content: "\f009"; //icon-th-large
+					padding-left:8px;
+				}
+			}
+		}
+		&.icon-angle-right {
+			> li {
+				+ li:before {
+					display: none;
+				}
+			}
+			> li {
+				+ li:after {
+					font-family: FontAwesome;
+					content: "\f104"; //icon-angle-left
+				}
+			}
+		}
+		&.icon-angle-double-right {
+			> li {
+				+ li:before {
+					display: none;
+				}
+			}
+			> li {
+				+ li:after {
+					font-family: FontAwesome;
+					content: "\f100"; //icon-angle-double-left
+				}
+			}
+		}
+	}
+}
+
+@each $key, $value in $palettes {
+	[data-palette="#{$key}"] {
+		.breadcrumb {
+			background-color: map-get($value, 'background-color');
+			&.breadcrumb-bg {
+				background-color: map-get($value, 'hover-color');
+			}
+			> .active {
+				color: map-get($value, 'text-color');
+			}
+			&.icon-home {
+				> li:first-child {
+					&:before {
+						color: map-get($value, 'text-color');
+					}
+				}
+			}
+			&.icon-th {
+				> li:first-child {
+					&:before {
+						color: map-get($value, 'text-color');
+					}
+				}
+			}
+			&.icon-th-large {
+				> li:first-child {
+					&:before {
+						color: map-get($value, 'text-color');
+					}
+				}
+			}
+			&.icon-angle-right {
+				> li {
+					+ li:before {
+						color: map-get($value, 'text-color');
+					}
+				}
+			}
+			&.icon-angle-double-right {
+				> li {
+					+ li:before {
+						color: map-get($value, 'text-color');
+					}
+				}
+			}
+		}
+	}
+}
+
