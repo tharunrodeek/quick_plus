@@ -117,7 +117,7 @@ $dim_info = get_dimension($user_info['dflt_dimension_id']);
                                         <div class="form-group">
                                             <label for="customer" class="">Customer</label>
                                             <select class="custom-select bg-white" name="customer" id="customer"
-                                                    disabled>
+                                                    >
                                                 <?= prepareSelectOptions(
                                                     $api->get_records_from_table('0_debtors_master', ['debtor_no', 'name']),
                                                     'debtor_no', 'name', getArrayValue($req_info, 'customer_id'), "--"
